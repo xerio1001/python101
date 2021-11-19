@@ -2,6 +2,7 @@ import pcinput
 from random import randint
 
 aantal_vragen = pcinput.getInteger('Hoeveel vragen wilt u: ')
+
 max = 0
 score = 0
 
@@ -14,10 +15,15 @@ while max < aantal_vragen:
 
     if(antwoord == (getal1 + getal2)):
         score += 1
-
     max += 1
 
-print('score:', score)
+print(' ')
+print('score:', score,)
 
 totaal = score / aantal_vragen * 100
-print(totaal, '%')
+print(totaal, '%', '\n')
+
+if(totaal < 50):
+    print('Niet geslaagd!')
+else:
+    print('Geslaagd!')
