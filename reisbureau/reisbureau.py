@@ -1,30 +1,47 @@
-import pcinput
-
 """
 Een klant boekt bij een reisorganisatie een reis met keuze uit verschillende opties: bereken de
 totale kostprijs voor deze klant met volgende gegevens:
-• Vervoer : enkele reis vliegtuig=200€, enkele reis per autocar=50€, zelf met de auto = 0€.
-• Hotel: standaardkamer prijs in hotel Zeezicht=30€/nacht/persoon, hotel
-Duinenzicht=25€/nacht/persoon.
-• Type kamer: zeezicht = supplement van 10%, balkon=+20€/nacht, luxe suite=+40€/nacht.
-• Aantal nachten: hoeveelheidskorting: 7 +1 nacht gratis, 10+2 nachten gratis. (7=7, 8=7, 9=8,
+• (algemene informatie) Aantal nachten: hoeveelheidskorting: 7 +1 nacht gratis, 10+2 nachten gratis. (7=7, 8=7, 9=8,
 10=9, 11=10, 12=10, 13=11, ….).
-• Aantal personen: aantal volwassenen, kinderen (50% korting op kamerprijs en kamertype
-supplement).
-• Eten: geen ontbijt, met ontbijt (10€/nacht), half pension(30€/nacht), vol pension (40€/nacht).
 Probeer zoveel mogelijk functies te gebruiken.
 """
+import pcinput
+import funcVervoer
+import funcHotel
+import funcEten
+import funcNachten
+
 
 #algemene informatie
-nachten = pcinput.getInteger('Hoeveel nachten blijft u?: ')
-personen = pcinput.getInteger('Hoeveel personen neemt u mee?: ')
+aantalNachten = pcinput.getInteger('Hoeveel nachten blijft u?: ')
+aantalVolwassenen = pcinput.getInteger('Hoeveel volwassenen neemt u mee?: ')
+aantalKinderen = pcinput.getInteger('Hoeveel kinderen neemt u mee?: ')
 
-#vaste kosten per vervoer
-vliegtuig = 200
-autocar = 50
-auto = 0
+nachtenPerVolwassenen = aantalNachten * aantalVolwassenen
+nachtenPerKinderen = aantalNachten * aantalKinderen
+totaalPersonen = aantalKinderen + aantalVolwassenen
 
-#kosten verblijf
-hotel_zeezicht = 30
-hotel_duinenzicht = 25
+totaalKosten = 0
 
+#nachten
+AantalOvernachtingen = funcNachten.getNachten(aantalNachten)
+
+#vervoer
+vervoerType, vervoerKost = funcVervoer.getControleVervoer(totaalPersonen)
+
+#hotel
+hotelNaam, hotelKosten = funcHotel.getHotelTitel(nachtenPerVolwassenen, nachtenPerKinderen, aantalKinderen, aantalVolwassenen)
+hotelKamertype, hotelKamerKosten = funcHotel.getHotelKamer(aantalNachten, nachtenPerVolwassenen, nachtenPerKinderen, aantalKinderen, hotelKosten)
+
+#eten
+voedselType, voedselKost = funcEten.getVoedsel(aantalNachten)
+
+#totaal test
+print("")
+print(vervoerType, " ", round(vervoerKost, 2))
+print(hotelNaam, " ", round(hotelKosten, 2))
+print(hotelKamertype, " ", round(hotelKamerKosten, 2))
+print(voedselType, " ", round(voedselKost, 2))
+print("")
+totaalKosten = vervoerKost + hotelKosten + hotelKamerKosten + voedselKost
+print(totaalKosten)

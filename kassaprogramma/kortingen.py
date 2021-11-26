@@ -39,6 +39,22 @@ def biljet(teruggave):
         berekening9 = rest_ber8 // 1
         rest_ber9 = rest_ber8 % 1
 
+        berekening10 = rest_ber9 // 0.5
+        rest_ber10 = rest_ber9 % 0.5
+
+        berekening11 = rest_ber10 // 0.2
+        rest_ber11 = rest_ber10 % 0.2
+
+        berekening12 = rest_ber11 // 0.1
+        rest_ber12 = rest_ber11 % 0.1
+
+        berekening13 = rest_ber12 // 0.05
+        rest_ber13 = rest_ber12 % 0.05
+
+        rest_ber14 = rest_ber13 // 0.02
+        rest_ber14 = rest_ber13 % 0.01
+
+
         if(berekening1 != 0):
             print(f'{berekening1:>22} {"briefjes van 500":<30}')
 
