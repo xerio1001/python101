@@ -1,0 +1,154 @@
+body{
+    background-color: #414141;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#placeholder_main{
+   width: 100%;
+   height: 100%;
+   margin: auto auto;
+   background-color: #0f0f0f;
+   position: relative;
+   border-radius: 10px;
+   box-shadow: 0px 0px 7px #3d3bb8;
+}
+
+#placefiller{
+    width: 100%;
+    position: relative;
+    height: 20%;
+}
+
+#placeholder{
+    margin: auto auto;
+    position: relative;
+    text-align: center;
+}
+
+
+
+input[type="text"]{
+    border: 1px solid #3d3bb8;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: left;
+    padding: 15px 23px;
+    box-shadow: 0px 0px 5px #3d3bb8;
+    color: #3d3bb8;
+}
+
+input[type="password"]{
+    border: 1px solid #3d3bb8;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: left;
+    padding: 15px 23px;
+    box-shadow: 0px 0px 5px #3d3bb8;
+    color: #3d3bb8;
+}
+
+input[type="submit"]{
+    border-radius: 10px;
+    margin: 10px auto;
+    background-color: #3d3bb8;
+    text-align: center;
+    padding: 15px 90px;
+    box-shadow: 0px 0px 3px #3a38b3;
+    color: white;
+    margin-top: 20px;
+}
+
+input[type="text"]:hover{
+    border: 1px solid #3d3bb8;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 15px 23px;
+    box-shadow: 0px 0px 5px #3d3bb8;
+    animation-name: keyframes;
+    animation-duration: 0.1s;
+}
+
+input[type="password"]:hover{
+    border: 1px solid #3d3bb8;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 15px 23px;
+    box-shadow: 0px 0px 5px #3d3bb8;
+    animation-name: keyframes;
+    animation-duration: 0.1s;
+}
+
+input[type="submit"]:hover{
+    cursor: grab;
+    padding: 15px 90px;
+    animation-name: keyframes_submit;
+    animation-duration: 0.1s;
+    box-shadow: 0px 0px 3px #3a38b3;
+}
+
+input[type="submit"]:focus{
+    cursor: grabbing;
+}
+
+input[type="text"]:focus{
+    border: 1px solid #3d3bb8;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 15px 23px;
+    box-shadow: 0px 0px 5px #3d3bb8;
+}
+
+input[type="password"]:focus{
+    border: 1px solid #3d3bb8;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 15px 23px;
+    box-shadow: 0px 0px 5px #3d3bb8;
+}
+
+a:link{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline #3d3bb8;
+    cursor: grab;
+}
+a:focus{
+    text-decoration: none;
+    cursor: grabbing;
+}
+
+h4{
+    color: white;
+    font-size: 60px;
+    margin-bottom: 20px;
+    margin-top: 5%;
+}
+h1{
+    color: white;
+    font-size: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+@keyframes keyframes {
+    0%      {padding: 15px 23px;}
+    25%     {padding: 16px 24px;}
+    50%     {padding: 17px 25px;}
+    75%     {padding: 16px 24px;}
+    100%    {padding: 15px 23px;}
+}
+
+@keyframes keyframes_submit {
+    0%      {padding: 15px 90px;}
+    25%     {padding: 16px 91px;}
+    50%     {padding: 17px 92px;}
+    75%     {padding: 16px 91px;}
+    100%    {padding: 15px 90px;}
+}
