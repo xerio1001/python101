@@ -4,7 +4,7 @@ import funcMenu
 import ticket_print
 
 naam = pcinput.getString('Geef uw naam (Bediende): ')
-kassaTotaal = pcinput.getInteger('Geef de startwaarde van de kassa: ')
+kassaTotaal = pcinput.getFloat('Geef de startwaarde van de kassa: ')
 
 stoppen = 'nee'
 while stoppen == 'nee':
@@ -25,7 +25,7 @@ while stoppen == 'nee':
 
     # uitbreiding 1 (bereken de teruggaven) v
 
-    gegeven_bedrag = pcinput.getInteger('Gegeven bedrag: ')
+    gegeven_bedrag = pcinput.getFloat('Gegeven bedrag: ')
 
     if(gegeven_bedrag < prijs_korting):
         print('U heeft te weinig gegeven. Probeer opnieuw!')
@@ -54,6 +54,6 @@ while stoppen == 'nee':
 
 kassaTotaal = (kassaTotaal + gegeven_bedrag - teruggave)
 print('*'*60)
-print(f'{"Kassatotaal:":>30} {kassaTotaal:<} {"euro":<}')
+print(f'{"Kassatotaal:":>30} {int(kassaTotaal):<} {"euro":<}')
 print(f'{"Bediende:":>30} {naam:<30}')
 print('*'*60)
