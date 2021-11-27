@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<link href="styleRegister.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
 <title>Register</title>
 <body>
 
-    <div id="placeholder_main">
+    <div id="main">
+        <div id="placeholder">
 
-        
+            <h4>Register</h4>
 
+            <form method="POST" action="registerCompletion.html">
+                
+                <input type="text" placeholder="Username*" name="usern" required><br>
+                <input type="password" placeholder="Password*" name="pw" required><br>
+                <input type="email" placeholder="Email adress*" name="email" required><br>
+
+                <input type="submit" value="register" name="submit">
+
+            </form>
+
+            <a href="index.html">Go back</a>
+
+        </div>
     </div>
 
 </body>
