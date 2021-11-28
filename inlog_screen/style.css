@@ -65,6 +65,7 @@ input[type="text"]{
     padding: 15px 23px;
     box-shadow: 0px 0px 5px #3d3bb8;
     color: #3d3bb8;
+    text-align: center;
 }
 
 input[type="text"]::placeholder{
@@ -79,6 +80,7 @@ input[type="password"]{
     padding: 15px 23px;
     box-shadow: 0px 0px 5px #3d3bb8;
     color: #3d3bb8;
+    text-align: center;
 }
 
 input[type="password"]::placeholder{
@@ -104,6 +106,7 @@ input[type="email"]{
     padding: 15px 23px;
     box-shadow: 0px 0px 5px #3d3bb8;
     color: #3d3bb8;
+    text-align: center;
 }
 
 input[type="text"]:hover{
