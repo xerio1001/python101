@@ -147,6 +147,10 @@ input[type="email"]:hover{
     animation-duration: 0.1s;
 }
 
+input[type="email"]::placeholder{
+    text-align: center;
+}
+
 input[type="submit"]:focus{
     cursor: grabbing;
 }
