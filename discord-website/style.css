@@ -210,5 +210,5 @@ h1{
 img{
     border: 2px solid #3d3bb8;
     border-radius: 10px;
-    box-shadow: 1.5px 1.5px 3px #383838;
+    box-shadow: -1.5px 1.5px 3px #383838;
 }
