@@ -25,7 +25,7 @@ body{
     width: 100%;
     height: auto;
     position: relative;
-    margin-bottom: 0px;
+    margin-bottom: auto;
     top: 5px;
 }
 
@@ -52,7 +52,7 @@ body{
     color: white;
     font-weight: bold;
     font-size: 2rem;
-    border: 2px dotted #3d3bb8;
+    border: 1px dotted #3d3bb8;
     border-radius: 5px;
     text-align: center;
     padding-top: 0.5%;
