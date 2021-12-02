@@ -8,7 +8,6 @@ strippedFullNumInt = int(strippedFullNumInt)
 
 lastTwoNum = fullNumInt[8:10]
 lastTwoNum = int(lastTwoNum)
-print(lastTwoNum)
 
 controlenummer = 97 - (strippedFullNumInt % 97)
 if(controlenummer == lastTwoNum):
