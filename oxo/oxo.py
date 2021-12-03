@@ -3,24 +3,21 @@ import functiesOXO
 
 bord = [['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']]
 
-player1 = "O"
+player = "O"
 
 while True:
+    functiesOXO.winnaar(bord, player)
     waardeRij, waardeKolom = functiesOXO.getRijKolom()
 
     checked = functiesOXO.GetSpace(bord, waardeRij, waardeKolom)
 
     if(checked == True):
-
-        if(player1 == "X"):
-            player1 = "O"
-        else:
-            player1 = "X"
+        functiesOXO.getDraw(bord, player)
 
 
-        if(player1 == "X"):
+        if(player == "X"):
             bord[waardeRij][waardeKolom] = "X"
-        if(player1 == "O"):
+        if(player == "O"):
             bord[waardeRij][waardeKolom] = "O"
     else:
         print("Dit vak is al inguvuld. Probeer nog eens")
