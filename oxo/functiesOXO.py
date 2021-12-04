@@ -26,30 +26,30 @@ def getRijKolom():
 
 
 
-def winnaar(bord, playerTurn):
+def winnaar(bord, player):
     if(bord[0][0] == bord[0][1] == bord[0][2] and bord[0][0] != "-"):
-        print("speler", playerTurn, "heeft gewonnen!")
+        print("speler", player, "heeft gewonnen!")
         exit()
     elif(bord[1][0] == bord[1][1] == bord[1][2] and bord[1][0] != "-"):
-        print("speler", playerTurn, "heeft gewonnen!")
+        print("speler", player, "heeft gewonnen!")
         exit()
     elif(bord[2][0] == bord[2][1] == bord[2][2] and bord[2][0] != "-"):
-        print("speler", playerTurn, "heeft gewonnen!")
+        print("speler", player, "heeft gewonnen!")
         exit()
     elif(bord[0][0] == bord[1][0] == bord[2][0] and bord[0][0] != "-"):
-        print("speler", playerTurn, "heeft gewonnen!")
+        print("speler", player, "heeft gewonnen!")
         exit()
     elif(bord[0][1] == bord[1][1] == bord[2][1] and bord[0][1] != "-"):
-        print("speler", playerTurn, "heeft gewonnen!")
+        print("speler", player, "heeft gewonnen!")
         exit()
     elif(bord[0][2] == bord[1][2] == bord[2][2] and bord[0][2] != "-"):
-        print("speler", playerTurn, "heeft gewonnen!")
+        print("speler", player, "heeft gewonnen!")
         exit()
     elif(bord[0][0] == bord[1][1] == bord[2][2] and bord[0][0] != "-"):
-        print("speler", playerTurn, "heeft gewonnen!")
+        print("speler", player, "heeft gewonnen!")
         exit()
     elif(bord[2][0] == bord[1][1] == bord[0][2] and bord[2][0] != "-"):
-        print("speler", playerTurn, "heeft gewonnen!")
+        print("speler", player, "heeft gewonnen!")
         exit()
 
 
@@ -68,15 +68,14 @@ def GetSpace(bord, waardeRij, waardeKolom):
 
 
 def getDraw(bord, player):
-    getPlayerTurn = ""
     for row in range(3):
         for col in range(3):
             if(bord[row][col] == "-"):
                 if(player == "X"):
-                    getPlayerTurn = "O"
+                    player = "O"
                 else:
-                    getPlayerTurn = "X"
-                return getPlayerTurn.upper()
-            else:
-                print("Gelijkspel!")
-                exit()
+                    player = "X"
+                return player
+    else:
+        print("Gelijkspel!")
+        exit()
