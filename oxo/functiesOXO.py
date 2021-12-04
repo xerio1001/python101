@@ -1,9 +1,9 @@
 import pcinput
 
 def toon_bord(bord):
-    print(" A B C")
+    print(" 0 1 2 ")
     for rij in range(3):
-        print(rij + 1, end=' ')
+        print((rij - 1) + 1, end=' ')
         for kol in range(3):
             print(bord[rij][kol], end=' ')
         print()
@@ -16,7 +16,7 @@ def getRijKolom():
     while True:
         getWaardeR = pcinput.getInteger("Geef de plek van uw rij: ")
         getWaardeKol = pcinput.getInteger("Geef de plek van uw kolom: ")
-        if((getWaardeR <= 3) and (getWaardeKol <= 3)):
+        if((getWaardeR < 3) and (getWaardeKol < 3)):
             break
         else:
             print("U heeft een te hoge waarde ingevoerd. probeer nog eens")
@@ -68,7 +68,7 @@ def GetSpace(bord, waardeRij, waardeKolom):
 
 
 def getDraw(bord, player):
-    getPlayerTurn = "O"
+    getPlayerTurn = ""
     for row in range(3):
         for col in range(3):
             if(bord[row][col] == "-"):
