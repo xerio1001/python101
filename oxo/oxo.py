@@ -6,8 +6,9 @@ bord = [['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']]
 player = "O"
 
 while True:
-    functiesOXO.winnaar(bord, player)
     playerTurn = functiesOXO.getDraw(bord, player)
+    functiesOXO.winnaar(bord, playerTurn)
+    
     waardeRij, waardeKolom = functiesOXO.getRijKolom()
 
     checked = functiesOXO.GetSpace(bord, waardeRij, waardeKolom)
