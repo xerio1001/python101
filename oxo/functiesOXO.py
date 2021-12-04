@@ -66,11 +66,12 @@ def GetSpace(bord, waardeRij, waardeKolom):
 
 def getDraw(bord, player):
     for row in range(3):
-            for col in range(3):
-                if(bord[row][col] == "-"):
-                    if(player == "X"):
-                        player = "O"
-                    else:
-                        player = "X"
+        for col in range(3):
+            if(bord[row][col] == "-"):
+                if(player == "X"):
+                    player = "O"
+                else:
+                    player = "X"
+            else:
                 print("Gelijkspel!")
                 exit()
