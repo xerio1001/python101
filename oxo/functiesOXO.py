@@ -3,7 +3,7 @@ import pcinput
 def toon_bord(bord):
     print(" 0 1 2 ")
     for rij in range(3):
-        print((rij - 1) + 1, end=' ')
+        print(rij + 1, end=' ')
         for kol in range(3):
             print(bord[rij][kol], end=' ')
         print()
