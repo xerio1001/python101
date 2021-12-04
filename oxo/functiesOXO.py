@@ -53,6 +53,8 @@ def winnaar(bord, player):
         exit()
 
 
+
+
 def GetSpace(bord, waardeRij, waardeKolom):
     check = True
     if(bord[waardeRij][waardeKolom] != "-"):
@@ -61,6 +63,7 @@ def GetSpace(bord, waardeRij, waardeKolom):
         check = True
 
     return check
+
 
 
 
@@ -75,3 +78,4 @@ def getDraw(bord, player):
             else:
                 print("Gelijkspel!")
                 exit()
+    return player
