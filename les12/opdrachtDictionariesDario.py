@@ -2,7 +2,6 @@ tekst='appel,peer,banaan,kers,appel,kers,kers,mango,appel,appel,kers,tomaat,bana
 
 fruit = {}
 tekst_list = tekst.split(",")
-tekst_list.sort()
 
 for item in tekst_list:
     if(fruit.get(item)):
@@ -10,6 +9,8 @@ for item in tekst_list:
     else:
         fruit[item] = 1
 
+sortedFruit = list(fruit.keys())
+sortedFruit.sort()
 
-for item in fruit:
-    print(f'{item:<7}{":":^}{fruit[item]:>6}')
+for item in sortedFruit:
+    print(f'{item:<7}{":":^}{fruit[item]:>3}')
