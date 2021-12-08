@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const naam = prompt("Geef uw naam", "Uw naam hier");
+        console.log(naam);
+
+        let boek = prompt("Wat boek heeft u gekocht?", "Uw boek hier");
+        let prijs = prompt("Wat is de prijs van uw boek?", "Uw prijs hier");
+
+
+
+        if((naam == "Uw naam hier") || (boek == "Uw boek hier") || (prijs == "Uw prijs hier")){
+            document.write("ongeldige waarde");
+        }
+        else{
+            document.write(`<h1>${boek}</h1><p>`);
+            document.write(`Hallo ${naam}! Gelecifiteerd met de aankoop van "${boek}"!
+                            De prijs hiervoor is ${prijs}`);
+        }
+    </script>
+    
+</body>
+</html>

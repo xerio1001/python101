@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opdracht Tijdschrift Dario</title>
+</head>
+<body>
+
+    <script>
+        let tijdschrift = prompt("Wat is de naam van het tijdschrift?");
+        let prijs = prompt("Wat is de kostprijs?");
+        let stuks = prompt("Hoeveel stuks?");
+        
+        if((tijdschrift == "") || (tijdschrift == null)){
+            document.write("Ongeldige naam.");
+        }
+        else if((prijs == "") || (prijs == null)){
+            document.write("Ongeldige prijs.");
+        }
+        else if((stuks == "") || (stuks == null)){
+            document.write("Ongeldig aantal stuks.");
+        }
+        else{ 
+            document.write(`Het tijdschrift is: ${tijdschrift} het type hiervan is ${typeof tijdschrift}<p>`);
+            document.write(`De kostprijs van 1 exemplaar is ${prijs} het type hiervan is ${typeof prijs}<p>`);
+            document.write(`Het aantal exemplaren dat je wil kopen is: ${stuks}, het type hiervan is ${typeof stuks}<p>`);
+
+            prijs = parseFloat(prijs);
+            stuks = parseInt(stuks);
+            let totaal = prijs * stuks;
+            totaal = parseFloat(totaal);
+
+            document.write(`De totale prijs is dan ${totaal.toFixed(2)}`);
+        }
+    </script>
+
+</body>
+</html>
