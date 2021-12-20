@@ -53,10 +53,6 @@ for item in stockoverzichtDictionary.keys():
         else:
             break
 
-        
-
-
-
 print("Het volgende kan nog niet geleverd worden:")
 print(noneOrder)
 print()
