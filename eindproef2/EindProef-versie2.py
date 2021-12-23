@@ -25,6 +25,7 @@ while True:
     
     elif(bestelling in dictProduct.keys()):
         stockProduct = dictProduct[bestelling]
+        
         if(stockProduct[2] == 0):
             print("Dit product is momenteel op. Probeer nog eens")
         else:
