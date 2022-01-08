@@ -1,12 +1,16 @@
-def bereken(prijs, aantal_mosFriet):
-    korting = 0
-    if((prijs >= 150) and (aantal_mosFriet >= 2)):
-        korting = 20
-    elif((prijs >= 100) and (aantal_mosFriet >= 2)):
-        korting = 10
-    elif((prijs >= 50) and (aantal_mosFriet >= 2)):
-        korting = 5
-    return korting
+def CalcPrice(allOrders):
+    Get_totaal_prijs = 0
+    for item in allOrders:
+
+        aantal = item[2]
+        eenheidsprijs = item[3]
+
+        Get_prijs = eenheidsprijs * aantal
+        Get_prijs = float(Get_prijs)
+    
+        Get_totaal_prijs = Get_totaal_prijs + Get_prijs
+
+    return Get_totaal_prijs
 
 
 

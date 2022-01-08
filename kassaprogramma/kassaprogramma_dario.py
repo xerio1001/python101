@@ -1,38 +1,48 @@
 import pcinput
-import kortingen
 import funcMenu
-import ticket_print
+import funcPrijzen
 
-naam = pcinput.getString('Geef uw naam (Bediende): ')
+allProducts = {"A":{"Naam":"Mosselen frieten", "Prijs":20.0, "Stock":15}, 
+                "B":{"Naam":"koninginnehapjes", "Prijs":10.0, "Stock":15}, 
+                "C":{"Naam":"ijses", "Prijs":3.0, "Stock":50}, 
+                "D":{"Naam":"dranken", "Prijs":2.0, "Stock":100}
+            }
+allOrders = []
+
+naam_bediende = pcinput.getString('Geef uw naam (Bediende): ')
 kassaTotaal = pcinput.getFloat('Geef de startwaarde van de kassa: ')
+
+# Creêer nieuwe waardes om een nieuw product toe te voegen aan 'allProducts'
+
+#while True:                                                                            Dit heeft alleen nut als het deeltje in de functie die in text staat werkt
+bevestiging = pcinput.getString("Wilt u nog een product toevoegen?: ").lower()     
+
+if(bevestiging == "ja"):                                                           
+    funcMenu.AddMenu(allProducts)
+#else:                                                                                  Dit heeft alleen nut als het deeltje in de functie die in text staat werkt
+    #break                                                                              Dit heeft alleen nut als het deeltje in de functie die in text staat werkt
 
 stoppen = 'nee'
 while stoppen == 'nee':
 
-    aantal_mosFriet, aantal_kon, aantal_ijs, aantal_drank = funcMenu.showMenu()
-
-    kosten_mosFriet = aantal_mosFriet * 20
-    kosten_kon = aantal_kon * 10
-    kosten_ijs = aantal_ijs * 3
-    kosten_drank = aantal_drank * 2
-
-    print('U wilt:', aantal_mosFriet, 'Mosselen + frieten, ', aantal_kon, 'koninginnehapjes, ', aantal_ijs, 'ijsjes, ', aantal_drank, 'dranken')
-
-    prijs = (aantal_mosFriet * 20) + (aantal_kon * 10) + (aantal_ijs * 3) + (aantal_drank * 2)
-    korting = kortingen.bereken(prijs, aantal_mosFriet)
-    prijs_korting = prijs - korting
-    print('Totaal te betalen:', prijs_korting, 'euro')
+    # vraag de bestellingen op en toon het menu
+    funcMenu.GetOrder(allOrders, allProducts)
+    
+    # bereken de totaalprijs en daarna tonen
+    prijs = funcPrijzen.CalcPrice(allOrders)
+    print('Totaal te betalen:', prijs, 'euro')
 
     # uitbreiding 1 (bereken de teruggaven) v
 
     gegeven_bedrag = pcinput.getFloat('Gegeven bedrag: ')
 
-    if(gegeven_bedrag < prijs_korting):
+    if(gegeven_bedrag < prijs):
         print('U heeft te weinig gegeven. Probeer opnieuw!')
     else:
-        teruggave = gegeven_bedrag - prijs_korting
+        teruggave = gegeven_bedrag - prijs
         print('terug te geven:', teruggave, 'euro')
 
+    # vragen voor een ticket
     keuze = pcinput.getString('Wilt u een ticket? (Geef "ja" of "nee" in) ')
     if(keuze == "nee"):
         stoppen = pcinput.getString('Wilt u stoppen met het programma?(Geef "ja" of "nee"): ')
@@ -40,20 +50,17 @@ while stoppen == 'nee':
             print('Gaat u verder')
     elif(keuze == 'ja'):
 
-        # kassaticket opbouw v
-        ticket_print.showTicket(
-                                naam, aantal_mosFriet, kosten_mosFriet, aantal_kon, kosten_kon, aantal_ijs, 
-                                kosten_ijs, aantal_drank, kosten_drank, prijs, prijs_korting, korting, gegeven_bedrag, teruggave
-                                )
-        #einde kassaticket opbouw
+        # kassaticket opbouw
+        funcMenu.showTicket(allOrders, naam_bediende, gegeven_bedrag, prijs, teruggave)
         
+        # vragen of je wilt stoppen
         stoppen = pcinput.getString('Wilt u stoppen met het programma?(Geef "ja" of "nee"): ')
-        if(stoppen == 'nee'):
+        if(stoppen == 'ja'):
             kassaTotaal = (kassaTotaal + gegeven_bedrag - teruggave)
-#einde while loop
+
 
 kassaTotaal = (kassaTotaal + gegeven_bedrag - teruggave)
 print('*'*60)
 print(f'{"Kassatotaal:":>30} {int(kassaTotaal):<} {"euro":<}')
-print(f'{"Bediende:":>30} {naam:<30}')
+print(f'{"Bediende:":>30} {naam_bediende:<30}')
 print('*'*60)
