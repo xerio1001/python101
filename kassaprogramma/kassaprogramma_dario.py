@@ -25,14 +25,14 @@ if(bevestiging == "ja"):
 stoppen = 'nee'
 while stoppen == 'nee':
 
-    # vraag de bestellingen op en toon het menu
+    # vraag de bestellingen op en toon het menu (Functie om het menu te tonen wordt in de 'GetOrder' functie gebruikt.)
     funcMenu.GetOrder(allOrders, allProducts)
     
     # bereken de totaalprijs en daarna tonen
     prijs = funcPrijzen.CalcPrice(allOrders)
     print('Totaal te betalen:', prijs, 'euro')
 
-    # uitbreiding 1 (bereken de teruggaven) v
+    # uitbreiding: bereken de teruggaven
 
     gegeven_bedrag = pcinput.getFloat('Gegeven bedrag: ')
 
@@ -46,8 +46,10 @@ while stoppen == 'nee':
     keuze = pcinput.getString('Wilt u een ticket? (Geef "ja" of "nee" in) ')
     if(keuze == "nee"):
         stoppen = pcinput.getString('Wilt u stoppen met het programma?(Geef "ja" of "nee"): ')
+
         if(stoppen == 'ja'):
             print('Gaat u verder')
+            
     elif(keuze == 'ja'):
 
         # kassaticket opbouw

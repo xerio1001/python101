@@ -1,3 +1,4 @@
+# Functie om de totaalprijs te berekenen
 def CalcPrice(allOrders):
     Get_totaal_prijs = 0
     for item in allOrders:
@@ -13,7 +14,7 @@ def CalcPrice(allOrders):
     return Get_totaal_prijs
 
 
-
+# Functie voor het berekenen welke biljetten de klant moet terug krijgen
 def biljet(teruggave):
     
         berekening1 = teruggave // 500
@@ -63,47 +64,47 @@ def biljet(teruggave):
 
 
         if(berekening1 != 0):
-            print(f'{int(berekening1):>22} {"briefjes van 500":<30}')
+            print(f'{int(berekening1):>17} {"briefjes van 500 euro":<25}')
 
         if(berekening2 != 0):
-            print(f'{int(berekening2):>22} {"briefjes van 200":<30}')
+            print(f'{int(berekening2):>17} {"briefjes van 200 euro":<25}')
 
         if(berekening3 != 0):
-            print(f'{int(berekening3):>22} {"briefjes van 100":<30}')
+            print(f'{int(berekening3):>17} {"briefjes van 100 euro":<25}')
 
         if(berekening4 != 0):
-            print(f'{int(berekening4):>22} {"briefjes van 50":<30}')
+            print(f'{int(berekening4):>17} {"briefjes van 50 euro":<25}')
 
         if(berekening5 != 0):
-            print(f'{int(berekening5):>22} {"briefjes van 20":<30}')
+            print(f'{int(berekening5):>17} {"briefjes van 20 euro":<25}')
 
         if(berekening6 != 0):
-            print(f'{int(berekening6):>22} {"briefjes van 10":<30}')
+            print(f'{int(berekening6):>17} {"briefjes van 10 euro":<25}')
 
         if(berekening7 != 0):
-            print(f'{int(berekening7):>22} {"briefjes van 5":<30}')
+            print(f'{int(berekening7):>17} {"briefjes van 5 euro":<25}')
 
         if(berekening8 != 0):
-            print(f'{int(berekening8):>22} {"munstukken van 2":<30}')
+            print(f'{int(berekening8):>17} {"munstukken van 2 euro":<25}')
 
         if(berekening9 != 0):
-            print(f'{int(berekening9):>22} {"munstukken van 1":<30}')
+            print(f'{int(berekening9):>17} {"munstukken van 1 euro":<25}')
 
         if(berekening10 != 0):
-            print(f'{int(berekening10):>22} {"munstukken van 0.5":<30}')
+            print(f'{int(berekening10):>17} {"munstukken van 0.5 euro":<25}')
 
         if(berekening11 != 0):
-            print(f'{int(berekening11):>22} {"munstukken van 0.2":<30}')
+            print(f'{int(berekening11):>17} {"munstukken van 0.2 euro":<25}')
 
         if(berekening12 != 0):
-            print(f'{int(berekening12):>22} {"munstukken van 0.1":<30}')
+            print(f'{int(berekening12):>17} {"munstukken van 0.1 euro":<25}')
 
         if(berekening13 != 0):
-            print(f'{int(berekening13):>22} {"munstukken van 0.05":<30}')
+            print(f'{int(berekening13):>17} {"munstukken van 0.05 euro":<25}')
 
         if(berekening14 != 0):
-            print(f'{int(berekening14):>22} {"munstukken van 0.02":<30}')
+            print(f'{int(berekening14):>17} {"munstukken van 0.02 euro":<25}')
 
         if(berekening15 != 0):
-            print(f'{int(berekening15):>22} {"munstukken van 0.01":<30}')
+            print(f'{int(berekening15):>17} {"munstukken van 0.01 euro":<25}')
     

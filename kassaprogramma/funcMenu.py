@@ -1,6 +1,7 @@
 import pcinput
 import funcPrijzen
 
+# Functie voor het bij aanvullen van de stock
 def AddMenu(allProducts):
     # een lijst van het alfabet voor als key te gebruiken bij de dictionary van de stock
     alphabet_list = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -24,6 +25,7 @@ def AddMenu(allProducts):
 
             if(Get_nieuw_product != "" and Get_nieuw_prijs != "" and Get_nieuw_stock != ""):
                 allProducts["E"] = ({"Naam":Get_nieuw_product, "Prijs":Get_nieuw_prijs, "Stock":Get_nieuw_stock})
+
                 # kreeg dit niet aan de praat
                 
                 #i = 0
@@ -33,12 +35,12 @@ def AddMenu(allProducts):
                             #i += 1
                         #elif(key != alphabet_list[i]):
                             #allProducts[alphabet_list[i]] = ({"Naam":Get_nieuw_product, "Prijs":Get_nieuw_prijs, "Stock":Get_nieuw_stock})
-                            #break"""
+                            #break
             else:
                 return
 
 
-
+# Functie om het menu elke keer opnieuw te kunnen tonen
 def ShowMenu(allProducts):
     print()
     print("*"*70)
@@ -60,7 +62,7 @@ def ShowMenu(allProducts):
 
 
 
-
+# Functie voor de bestelling(en) op te nemen
 def GetOrder(allOrders, allProducts):
     total = 0
     while True:
@@ -78,7 +80,7 @@ def GetOrder(allOrders, allProducts):
                     stock = value["Stock"]
             # controleer of er nog in stock is van het gevraagde product
             if(stock <= 0):
-                print("Onze excuses maar dit product is op!")
+                print("Onze excuses maar dit product is op.")
             else:
                 print("Gewenst product:", naam, ", De eenheidsprijs:", prijs, "euro. Het aantal nog in stock:", stock)
                 Get_aantal_bestelling = pcinput.getInteger("Hoeveel had u graag gehad?: ")
@@ -99,7 +101,7 @@ def GetOrder(allOrders, allProducts):
 
 
 
-
+# Functie voor ticket af te printen
 def showTicket(allOrders, naam_bediende, gegeven_bedrag, prijs, teruggave):
 
     print('='*60)
@@ -112,17 +114,17 @@ def showTicket(allOrders, naam_bediende, gegeven_bedrag, prijs, teruggave):
         naam = item[1]
         aantal = item[2]
         eenheidsprijs = item[3]
-        print(f'| {naam:<20} | €{eenheidsprijs:<20} | {aantal:<9} |')
+        print(f'| {naam:<20} | € {eenheidsprijs:<19} | {aantal:<9} |')
 
     print('*'*60)
 
-    print(f'{"UW totaal":<30}{prijs:>29.2f}€')
-    print(f'{"Betaald":<30}{gegeven_bedrag:>29.2f}€')
+    print(f'{"UW totaal":<30}{prijs:>25.2f} euro')
+    print(f'{"Betaald":<30}{gegeven_bedrag:>25.2f} euro')
     
     if(gegeven_bedrag == prijs):
-        print(f'{"Terug gehad":<30}{"0":>29}€')
+        print(f'{"Terug gehad":<30}{"0":>25} euro')
     else:
-        print(f'{"Terug gehad":<30}{teruggave:>29.2f}€')
+        print(f'{"Terug gehad":<30}{teruggave:>25.2f} euro')
         print('*'*60)
 
     # uitbreiding 2 (welke munstukken/biljetten) v
