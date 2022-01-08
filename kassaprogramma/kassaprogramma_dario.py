@@ -55,8 +55,6 @@ while stoppen == 'nee':
         
         # vragen of je wilt stoppen
         stoppen = pcinput.getString('Wilt u stoppen met het programma?(Geef "ja" of "nee"): ')
-        if(stoppen == 'ja'):
-            kassaTotaal = (kassaTotaal + gegeven_bedrag - teruggave)
 
 
 kassaTotaal = (kassaTotaal + gegeven_bedrag - teruggave)

@@ -67,8 +67,8 @@ def GetOrder(allOrders, allProducts):
         # Toon de beschikbare producten
         ShowMenu(allProducts)
 
-        Get_bestelling = pcinput.getString("Wat had u graag gehad? (Geef de code van het product of 'nee' om te stoppen): ").upper()
-        if(Get_bestelling != "NEE"):
+        Get_bestelling = pcinput.getString("Wat had u graag gehad? (Geef de code van het product of 'stop' om te stoppen): ").upper()
+        if(Get_bestelling != "STOP"):
 
             # lees het gevraagde product uit de dictionary
             for key, value in allProducts.items():
@@ -105,7 +105,7 @@ def showTicket(allOrders, naam_bediende, gegeven_bedrag, prijs, teruggave):
     print('='*60)
     print(f'{naam_bediende:^60}')
     print('*'*60)
-    print(f'{"Uw bestelling + aantal":<20} | {"Alle kosten":<20} | {"Aantal":<9}')
+    print(f'{"Uw bestelling + aantal":<20} | {"Alle kosten":<21} | {"Aantal":<9}')
     print('*'*60)
 
     for item in allOrders:
