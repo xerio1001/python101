@@ -2,7 +2,7 @@ import pcinput
 import funcPrijzen
 
 # Functie voor het bij aanvullen van de stock
-def AddMenu(allProducts, i):
+def AddMenu(allProducts):
     # een lijst van het alfabet voor als key te gebruiken bij de dictionary van de stock
     alphabet_list = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     i = 3
@@ -31,7 +31,7 @@ def AddMenu(allProducts, i):
                     if(Get_nieuw_product != "" and Get_nieuw_prijs != "" and Get_nieuw_stock != ""):
                         i += 1
                         new_key = alphabet_list[i]
-                        allProducts[new_key] = ({"Naam":Get_nieuw_product, "Prijs":Get_nieuw_prijs, "Stock":Get_nieuw_stock})
+                        allProducts[new_key] = {"Naam":Get_nieuw_product, "Prijs":Get_nieuw_prijs, "Stock":Get_nieuw_stock}
                     else:
                         break
         else:

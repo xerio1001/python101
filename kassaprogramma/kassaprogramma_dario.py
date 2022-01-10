@@ -13,7 +13,7 @@ naam_bediende = pcinput.getString('Geef uw naam (Bediende): ')
 kassaTotaal = pcinput.getFloat('Geef de startwaarde van de kassa: ')
 
 # Creêer nieuwe waardes om een nieuw product toe te voegen aan 'allProducts'
-funcMenu.AddMenu(allProducts,i)
+funcMenu.AddMenu(allProducts)
     
 
 stoppen = 'nee'
