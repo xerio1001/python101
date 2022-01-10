@@ -13,14 +13,8 @@ naam_bediende = pcinput.getString('Geef uw naam (Bediende): ')
 kassaTotaal = pcinput.getFloat('Geef de startwaarde van de kassa: ')
 
 # Creêer nieuwe waardes om een nieuw product toe te voegen aan 'allProducts'
-
-#while True:                                                                            Dit heeft alleen nut als het deeltje in de functie die in text staat werkt
-bevestiging = pcinput.getString("Wilt u nog een product toevoegen?: ").lower()     
-
-if(bevestiging == "ja"):                                                           
-    funcMenu.AddMenu(allProducts)
-#else:                                                                                  Dit heeft alleen nut als het deeltje in de functie die in text staat werkt
-    #break                                                                              Dit heeft alleen nut als het deeltje in de functie die in text staat werkt
+funcMenu.AddMenu(allProducts,i)
+    
 
 stoppen = 'nee'
 while stoppen == 'nee':

@@ -2,42 +2,40 @@ import pcinput
 import funcPrijzen
 
 # Functie voor het bij aanvullen van de stock
-def AddMenu(allProducts):
+def AddMenu(allProducts, i):
     # een lijst van het alfabet voor als key te gebruiken bij de dictionary van de stock
     alphabet_list = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-    
-    Get_nieuw_product = pcinput.getString("Geef een nieuw product in: ").lower()
+    i = 3
+    while True:                                                                            
+        bevestiging = pcinput.getString("Wilt u nog een product toevoegen?: ").lower()     
 
-    if(Get_nieuw_product == ""):
-        print("Probeer opnieuw!")
-        Get_nieuw_product = pcinput.getString("Geef een nieuw product in (X bij naam om te stoppen): ").lower()
-    else:
-        Get_nieuw_prijs = pcinput.getFloat("Wat is de prijs van dit product?: ")
-        Get_nieuw_stock = pcinput.getInteger("Hoeveel is er in stock van het nieuwe product?: ")
+        if(bevestiging == "ja"):
 
-        if(Get_nieuw_prijs < 0):
-            print("De prijs kan niet lager dan 0 zijn")
-            Get_nieuw_prijs = pcinput.getFloat("Wat is de prijs van dit product?: ")
-        if(Get_nieuw_stock <= 0):
-            print("De stock kan niet lager of gelijk zijn aan 0 zijn")
-            Get_nieuw_stock = pcinput.getInteger("Hoeveel is er in stock van het nieuwe product?: ")
-        else:
+            Get_nieuw_product = pcinput.getString("Geef een nieuw product in: ").lower()
 
-            if(Get_nieuw_product != "" and Get_nieuw_prijs != "" and Get_nieuw_stock != ""):
-                allProducts["E"] = ({"Naam":Get_nieuw_product, "Prijs":Get_nieuw_prijs, "Stock":Get_nieuw_stock})
-
-                # kreeg dit niet aan de praat
-                
-                #i = 0
-                #for key in allProducts.keys():
-                    #while True:
-                        #if(key == alphabet_list[i]):
-                            #i += 1
-                        #elif(key != alphabet_list[i]):
-                            #allProducts[alphabet_list[i]] = ({"Naam":Get_nieuw_product, "Prijs":Get_nieuw_prijs, "Stock":Get_nieuw_stock})
-                            #break
+            if(Get_nieuw_product == ""):
+                print("Probeer opnieuw!")
+                Get_nieuw_product = pcinput.getString("Geef een nieuw product in (X bij naam om te stoppen): ").lower()
             else:
-                return
+                Get_nieuw_prijs = pcinput.getFloat("Wat is de prijs van dit product?: ")
+                Get_nieuw_stock = pcinput.getInteger("Hoeveel is er in stock van het nieuwe product?: ")
+
+                if(Get_nieuw_prijs < 0):
+                    print("De prijs kan niet lager dan 0 zijn")
+                    Get_nieuw_prijs = pcinput.getFloat("Wat is de prijs van dit product?: ")
+                if(Get_nieuw_stock <= 0):
+                    print("De stock kan niet lager of gelijk zijn aan 0 zijn")
+                    Get_nieuw_stock = pcinput.getInteger("Hoeveel is er in stock van het nieuwe product?: ")
+                else:
+
+                    if(Get_nieuw_product != "" and Get_nieuw_prijs != "" and Get_nieuw_stock != ""):
+                        i += 1
+                        new_key = alphabet_list[i]
+                        allProducts[new_key] = ({"Naam":Get_nieuw_product, "Prijs":Get_nieuw_prijs, "Stock":Get_nieuw_stock})
+                    else:
+                        break
+        else:
+            break
 
 
 # Functie om het menu elke keer opnieuw te kunnen tonen
@@ -73,11 +71,11 @@ def GetOrder(allOrders, allProducts):
         if(Get_bestelling != "STOP"):
 
             # lees het gevraagde product uit de dictionary
-            for key, value in allProducts.items():
-                if(key == Get_bestelling):
-                    naam = value["Naam"]
-                    prijs = value["Prijs"]
-                    stock = value["Stock"]
+            currentProduct = allProducts[Get_bestelling]
+            naam = currentProduct["Naam"]
+            prijs = currentProduct["Prijs"]
+            stock = currentProduct["Stock"]
+            
             # controleer of er nog in stock is van het gevraagde product
             if(stock <= 0):
                 print("Onze excuses maar dit product is op.")
@@ -91,8 +89,7 @@ def GetOrder(allOrders, allProducts):
                     Get_aantal_bestelling = pcinput.getInteger("Hoeveel had u graag gehad?: ")
                 else:
                     # pas stock aan als alles klopt en voeg daarna alle bestellingen toe aan een lijst
-                    total = stock - Get_aantal_bestelling
-                    stock = total
+                    currentProduct["Stock"] = stock - Get_aantal_bestelling
                     allOrders.append([Get_bestelling, naam, Get_aantal_bestelling, prijs])
 
         else:
