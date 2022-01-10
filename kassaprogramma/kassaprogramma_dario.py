@@ -14,7 +14,6 @@ kassaTotaal = pcinput.getFloat('Geef de startwaarde van de kassa: ')
 
 # Creêer nieuwe waardes om een nieuw product toe te voegen aan 'allProducts'
 funcMenu.AddMenu(allProducts)
-    
 
 stoppen = 'nee'
 while stoppen == 'nee':

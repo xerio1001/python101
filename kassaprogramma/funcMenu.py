@@ -68,8 +68,9 @@ def GetOrder(allOrders, allProducts):
         ShowMenu(allProducts)
 
         Get_bestelling = pcinput.getString("Wat had u graag gehad? (Geef de code van het product of 'stop' om te stoppen): ").upper()
-        if(Get_bestelling != "STOP"):
 
+        if(Get_bestelling != "STOP"):
+            
             # lees het gevraagde product uit de dictionary
             currentProduct = allProducts[Get_bestelling]
             naam = currentProduct["Naam"]
@@ -93,7 +94,6 @@ def GetOrder(allOrders, allProducts):
                     allOrders.append([Get_bestelling, naam, Get_aantal_bestelling, prijs])
 
         else:
-            print(allOrders)
             break
 
 
