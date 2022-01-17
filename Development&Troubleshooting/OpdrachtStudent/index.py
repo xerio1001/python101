@@ -2,22 +2,24 @@ import datetime
 current_date = datetime.datetime.now()
 
 class Student:
-    def __init__(self, voornaam, achternaam, adminNummer):
+    def __init__(self, voornaam, achternaam, adminNummer, gbDatum: tuple = (0,0,0)):
         self.voornaam = voornaam
         self.achternaam = achternaam
         self.adminNummer = adminNummer
 
-    def geboortedatum(self, dag, maand, jaar):
-        self.dag = dag
-        self.maand = maand
-        self.jaar = jaar
-
-        leeftijd = current_date.year - jaar - ((current_date.month, current_date.day) < (maand, dag))
+        self.gbDatum = gbDatum
+        self.leeftijd = self.geboortedatum()
         
-        return f'Leeftijd: {leeftijd}'
+
+    def geboortedatum(self):
+        self.dag = self.gbDatum[0]
+        self.maand = self.gbDatum[1]
+        self.jaar = self.gbDatum[2]
+
+        return current_date.year - self.jaar - ((current_date.month, current_date.day) < (self.maand, self.dag))
 
     def __repr__(self):
-        return f'{self.voornaam} {self.achternaam} {self.adminNummer}'
+        return f'{self.voornaam} {self.achternaam} {self.adminNummer} {self.leeftijd}'
 
 
 
@@ -34,23 +36,20 @@ class Cursus:
         return f'Cursus: {self.cursusNaam} {self.cursusNummer}, Student:{self.students}'
 
 
-student1 = Student("Dario", "Van Hasselt", 69)
-student2 = Student("Bert", "Vriens", 68)
-student3 = Student("Jens", "Coomans", 67)
+student1 = Student("Dario", "Van Hasselt", 69, (2, 10 ,2001))
+student2 = Student("Bert", "Vriens", 68, (15, 1 ,1977))
+student3 = Student("Jens", "Coomans", 67, (19, 1 ,1990))
 
 cursus1 = Cursus("Python", 420)
 cursus2 = Cursus("Dev & TroubleShooting", 21)
 cursus3 = Cursus(".NET/C#", 1)
 cursus4 = Cursus("UI & Publication", 2)
 
-student1.geboortedatum(2, 10 ,2001)
-student2.geboortedatum(15, 1 ,1977)
-student2.geboortedatum(19, 1 ,1990)
-
 cursus1.addStundent(student1, student2)
 cursus2.addStundent(student1, student3)
 cursus3.addStundent(student2, student3)
 cursus4.addStundent(student1, student2, student3)
+
 print(cursus1)
 print()
 print(cursus2)
