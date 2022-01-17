@@ -2,19 +2,19 @@ import datetime
 current_date = datetime.datetime.now()
 
 class Student:
-    def __init__(self, voornaam, achternaam, adminNummer, gbDatum: tuple = (0,0,0)):
+    def __init__(self, voornaam, achternaam, adminNummer, gebDatum: tuple = (0,0,0)):
         self.voornaam = voornaam
         self.achternaam = achternaam
         self.adminNummer = adminNummer
 
-        self.gbDatum = gbDatum
+        self.gebDatum = gebDatum
         self.leeftijd = self.geboortedatum()
         
 
     def geboortedatum(self):
-        self.dag = self.gbDatum[0]
-        self.maand = self.gbDatum[1]
-        self.jaar = self.gbDatum[2]
+        self.dag = self.gebDatum[0]
+        self.maand = self.gebDatum[1]
+        self.jaar = self.gebDatum[2]
 
         return current_date.year - self.jaar - ((current_date.month, current_date.day) < (self.maand, self.dag))
 
@@ -57,21 +57,4 @@ print()
 print(cursus3)
 print()
 print(cursus4)
-print()
-
-exit()
-
-print([student1.voornaam, student1.achternaam, student1.geboortedatum(2, 10 ,2001), "Cursist nummer", student1.adminNummer,
-"Cursusnaam:", cursus1.cursusNaam, "Cursusnaam", cursus2.cursusNaam])
-
-print()
-
-print([student2.voornaam, student2.achternaam, student2.geboortedatum(15, 1 ,1977), "Cursist nummer", student2.adminNummer,
-"Cursusnaam:", cursus1.cursusNaam, "Cursusnaam", cursus2.cursusNaam, "Cursusnaam", cursus4.cursusNaam])
-
-print()
-
-print([student3.voornaam, student3.achternaam, student3.geboortedatum(19, 1 ,1990), "Cursist nummer", student3.adminNummer,
-"Cursusnaam:", cursus2.cursusNaam, "Cursusnaam", cursus4.cursusNaam])
-
 print()
