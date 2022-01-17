@@ -16,6 +16,9 @@ class Student:
         
         return f'Leeftijd: {leeftijd}'
 
+    def __repr__(self):
+        return f'{self.voornaam} {self.achternaam} {self.adminNummer}'
+
 
 
 class Cursus:
@@ -24,8 +27,8 @@ class Cursus:
         self.cursusNummer = cursusNummer
         self.students = []
 
-    def addStundent(self, student):
-        self.students.append(student)
+    def addStundent(self, *args):
+        self.students.append(args)
 
     def __repr__(self):
         return f'Cursus: {self.cursusNaam} {self.cursusNummer}, Student:{self.students}'
@@ -44,7 +47,19 @@ student1.geboortedatum(2, 10 ,2001)
 student2.geboortedatum(15, 1 ,1977)
 student2.geboortedatum(19, 1 ,1990)
 
-print(cursus1.addStundent(student1, student2))
+cursus1.addStundent(student1, student2)
+cursus2.addStundent(student1, student3)
+cursus3.addStundent(student2, student3)
+cursus4.addStundent(student1, student2, student3)
+print(cursus1)
+print()
+print(cursus2)
+print()
+print(cursus3)
+print()
+print(cursus4)
+print()
+
 exit()
 
 print([student1.voornaam, student1.achternaam, student1.geboortedatum(2, 10 ,2001), "Cursist nummer", student1.adminNummer,
