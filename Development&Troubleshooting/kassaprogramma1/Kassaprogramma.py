@@ -25,9 +25,14 @@ class Bestelling:
         self.bedragIjs = self.aantalIjs * self.PRIJSIJS
         return self.bedragMosselen + self.bedragVidee + self.bedragDrank + self.bedragIjs
 
-class product:
+class Product:
     def __init__(self):
         pass
+
+product1 = {"Naam":"Mosselen friet","Prijs":10}
+product2 = {"Naam":"Friet videé","Prijs":12}
+product3 = {"Naam":"Drank","Prijs":2}
+product4 = {"Naam":"Ijs","Prijs":3}
 
 naamBediende = getString('Kassabediende, geef je naam! : ')
 kassaBegin = getInteger(naamBediende + ', geef je kassabegin! : ')
