@@ -1,6 +1,20 @@
-import pcinput
-import funcMenu
-import funcPrijzen
+import pcinput, funcMenu, funcPrijzen
+
+class BerekenKorting:
+    def __init__(self):
+        pass
+
+class OntvangenBedrag:
+    def __init__(self):
+        pass
+
+class BerekenTeruggave:
+    def __init__(self):
+        pass
+
+class PrintTicket:
+    def __init__(self):
+        pass
 
 allProducts = {"A":{"Naam":"Mosselen frieten", "Prijs":20.0, "Stock":15}, 
                 "B":{"Naam":"koninginnehapjes", "Prijs":10.0, "Stock":15}, 
