@@ -85,8 +85,8 @@ while True:
     print("TotaalPrijs", "€",totaalTeBetalen)
 
     # vraag hoeveel er betaald is en controleer op juistheid
-    betaald = getInteger("Hoeveel heeft u betaald?: ")
     while True:
+        betaald = getInteger("Hoeveel heeft u betaald?: ")
         if(betaald < totaalTeBetalen):
             print("U heeft te weinig gegeven!")
         else:
