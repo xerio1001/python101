@@ -27,8 +27,12 @@ class rechthoek:
 p1 = Punt(3, 1)
 p2 = Punt(1, 12)
 
-r = rechthoek(p1, p2)
+p3 = Punt(3,5)
+p4 = Punt(12,22)
 
-r.verplaats(1, 1)
+r = rechthoek(p1, p2)
+r2 = rechthoek(p3, p4)
+
+#r.verplaats(1, 1)
 print(r.loHoek.x,r.loHoek.y, "", r.rbHoek.x,r.rbHoek.y)
 print(r.getSize())
