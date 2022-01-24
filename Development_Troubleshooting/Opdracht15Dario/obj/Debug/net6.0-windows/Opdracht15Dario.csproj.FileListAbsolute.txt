@@ -1,0 +1,17 @@
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\bin\Debug\net6.0-windows\Opdracht15Dario.exe
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\bin\Debug\net6.0-windows\Opdracht15Dario.deps.json
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\bin\Debug\net6.0-windows\Opdracht15Dario.runtimeconfig.json
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\bin\Debug\net6.0-windows\Opdracht15Dario.dll
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\bin\Debug\net6.0-windows\ref\Opdracht15Dario.dll
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\bin\Debug\net6.0-windows\Opdracht15Dario.pdb
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.csproj.GenerateResource.cache
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.AssemblyInfoInputs.cache
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.AssemblyInfo.cs
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.csproj.CoreCompileInputs.cache
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.dll
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\ref\Opdracht15Dario.dll
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.pdb
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.genruntimeconfig.cache
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.FrmOpdracht15Dario.resources
+D:\Bureaublad\folders\school\python\python101\Development_Troubleshooting\Opdracht15Dario\obj\Debug\net6.0-windows\Opdracht15Dario.csproj.AssemblyReference.cache
