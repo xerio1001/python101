@@ -34,7 +34,7 @@
             this.LblSeconden = new System.Windows.Forms.Label();
             this.TxtSeconden = new System.Windows.Forms.TextBox();
             this.LblOutput = new System.Windows.Forms.Label();
-            this.BtnNieuw = new System.Windows.Forms.Button();
+            this.BtnToevoegen = new System.Windows.Forms.Button();
             this.LblBackgroundTop = new System.Windows.Forms.Label();
             this.BtnSnelste = new System.Windows.Forms.Button();
             this.BtnWissen = new System.Windows.Forms.Button();
@@ -80,21 +80,22 @@
             // LblOutput
             // 
             this.LblOutput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblOutput.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblOutput.Location = new System.Drawing.Point(27, 182);
             this.LblOutput.Name = "LblOutput";
             this.LblOutput.Size = new System.Drawing.Size(334, 228);
             this.LblOutput.TabIndex = 4;
             // 
-            // BtnNieuw
+            // BtnToevoegen
             // 
-            this.BtnNieuw.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnNieuw.Location = new System.Drawing.Point(381, 260);
-            this.BtnNieuw.Name = "BtnNieuw";
-            this.BtnNieuw.Size = new System.Drawing.Size(141, 33);
-            this.BtnNieuw.TabIndex = 5;
-            this.BtnNieuw.Text = "&Nieuwe ingaven";
-            this.BtnNieuw.UseVisualStyleBackColor = true;
-            this.BtnNieuw.Click += new System.EventHandler(this.BtnNieuw_Click);
+            this.BtnToevoegen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnToevoegen.Location = new System.Drawing.Point(381, 260);
+            this.BtnToevoegen.Name = "BtnToevoegen";
+            this.BtnToevoegen.Size = new System.Drawing.Size(141, 33);
+            this.BtnToevoegen.TabIndex = 5;
+            this.BtnToevoegen.Text = "&Voeg toe";
+            this.BtnToevoegen.UseVisualStyleBackColor = true;
+            this.BtnToevoegen.Click += new System.EventHandler(this.BtnToevoegen_Click);
             // 
             // LblBackgroundTop
             // 
@@ -111,7 +112,7 @@
             this.BtnSnelste.Name = "BtnSnelste";
             this.BtnSnelste.Size = new System.Drawing.Size(141, 33);
             this.BtnSnelste.TabIndex = 7;
-            this.BtnSnelste.Text = "&Snelste atleet";
+            this.BtnSnelste.Text = "Sn&elste atleet";
             this.BtnSnelste.UseVisualStyleBackColor = true;
             this.BtnSnelste.Click += new System.EventHandler(this.BtnSnelste_Click);
             // 
@@ -145,7 +146,7 @@
             this.Controls.Add(this.BtnSluiten);
             this.Controls.Add(this.BtnWissen);
             this.Controls.Add(this.BtnSnelste);
-            this.Controls.Add(this.BtnNieuw);
+            this.Controls.Add(this.BtnToevoegen);
             this.Controls.Add(this.LblOutput);
             this.Controls.Add(this.TxtSeconden);
             this.Controls.Add(this.LblSeconden);
@@ -167,7 +168,7 @@
         private Label LblSeconden;
         private TextBox TxtSeconden;
         private Label LblOutput;
-        private Button BtnNieuw;
+        private Button BtnToevoegen;
         private Label LblBackgroundTop;
         private Button BtnSnelste;
         private Button BtnWissen;
