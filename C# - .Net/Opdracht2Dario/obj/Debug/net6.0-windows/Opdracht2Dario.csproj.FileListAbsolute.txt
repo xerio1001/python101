@@ -1,0 +1,16 @@
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\bin\Debug\net6.0-windows\Opdracht2Dario.exe
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\bin\Debug\net6.0-windows\Opdracht2Dario.deps.json
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\bin\Debug\net6.0-windows\Opdracht2Dario.runtimeconfig.json
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\bin\Debug\net6.0-windows\Opdracht2Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\bin\Debug\net6.0-windows\ref\Opdracht2Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\bin\Debug\net6.0-windows\Opdracht2Dario.pdb
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\Opdracht2Dario.Opdracht2.resources
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\Opdracht2Dario.csproj.GenerateResource.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\Opdracht2Dario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\Opdracht2Dario.AssemblyInfoInputs.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\Opdracht2Dario.AssemblyInfo.cs
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\Opdracht2Dario.csproj.CoreCompileInputs.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\Opdracht2Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\ref\Opdracht2Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\Opdracht2Dario.pdb
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht2Dario\obj\Debug\net6.0-windows\Opdracht2Dario.genruntimeconfig.cache

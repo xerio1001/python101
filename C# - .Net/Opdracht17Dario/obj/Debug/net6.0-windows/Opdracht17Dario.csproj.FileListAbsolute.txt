@@ -1,0 +1,16 @@
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\bin\Debug\net6.0-windows\Opdracht17Dario.exe
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\bin\Debug\net6.0-windows\Opdracht17Dario.deps.json
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\bin\Debug\net6.0-windows\Opdracht17Dario.runtimeconfig.json
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\bin\Debug\net6.0-windows\Opdracht17Dario.dll
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\bin\Debug\net6.0-windows\ref\Opdracht17Dario.dll
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\bin\Debug\net6.0-windows\Opdracht17Dario.pdb
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\Opdracht17Dario.csproj.GenerateResource.cache
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\Opdracht17Dario.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\Opdracht17Dario.AssemblyInfoInputs.cache
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\Opdracht17Dario.AssemblyInfo.cs
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\Opdracht17Dario.csproj.CoreCompileInputs.cache
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\Opdracht17Dario.dll
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\ref\Opdracht17Dario.dll
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\Opdracht17Dario.pdb
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\Opdracht17Dario.genruntimeconfig.cache
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht17Dario\obj\Debug\net6.0-windows\Opdracht17Dario.FrmOpdracht17Dario.resources

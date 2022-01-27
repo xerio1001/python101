@@ -1,0 +1,17 @@
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\bin\Debug\net6.0-windows\Opdracht4Dario.exe
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\bin\Debug\net6.0-windows\Opdracht4Dario.deps.json
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\bin\Debug\net6.0-windows\Opdracht4Dario.runtimeconfig.json
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\bin\Debug\net6.0-windows\Opdracht4Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\bin\Debug\net6.0-windows\ref\Opdracht4Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\bin\Debug\net6.0-windows\Opdracht4Dario.pdb
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.Opdracht4.resources
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.csproj.GenerateResource.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.AssemblyInfoInputs.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.AssemblyInfo.cs
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.csproj.CoreCompileInputs.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\ref\Opdracht4Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.pdb
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.genruntimeconfig.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht4Dario\obj\Debug\net6.0-windows\Opdracht4Dario.csproj.AssemblyReference.cache

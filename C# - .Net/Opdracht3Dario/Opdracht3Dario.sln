@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opdracht3Dario", "Opdracht3Dario.csproj", "{293B2A90-6571-4317-98BC-4254FA229EAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{293B2A90-6571-4317-98BC-4254FA229EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{293B2A90-6571-4317-98BC-4254FA229EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{293B2A90-6571-4317-98BC-4254FA229EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{293B2A90-6571-4317-98BC-4254FA229EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66F8A2AC-CC72-429E-9686-4DBBAA6B9A80}
+	EndGlobalSection
+EndGlobal

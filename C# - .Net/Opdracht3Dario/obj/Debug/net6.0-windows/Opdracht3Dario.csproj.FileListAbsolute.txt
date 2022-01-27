@@ -1,0 +1,17 @@
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\bin\Debug\net6.0-windows\Opdracht3Dario.exe
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\bin\Debug\net6.0-windows\Opdracht3Dario.deps.json
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\bin\Debug\net6.0-windows\Opdracht3Dario.runtimeconfig.json
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\bin\Debug\net6.0-windows\Opdracht3Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\bin\Debug\net6.0-windows\ref\Opdracht3Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\bin\Debug\net6.0-windows\Opdracht3Dario.pdb
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.csproj.AssemblyReference.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.Form1.resources
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.csproj.GenerateResource.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.AssemblyInfoInputs.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.AssemblyInfo.cs
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.csproj.CoreCompileInputs.cache
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\ref\Opdracht3Dario.dll
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.pdb
+C:\Users\JUD\Documents\JUD - .NET - 101 (112022 - 3112022)\Opdracht3Dario\obj\Debug\net6.0-windows\Opdracht3Dario.genruntimeconfig.cache

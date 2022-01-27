@@ -25,6 +25,12 @@ class Punt:
         self.invertX
         self.invertY
 
+    def __mul__(self, other):
+        if(isinstance(other, Punt)):
+            return self.x * other.y, self.y * other.x
+        elif(isinstance(other, int)):
+            return self.x * other, self.y * other
+
 class Rechthoek:
     def __init__(self,lbHoek, breedte, hoogte):
         self.lbHoek = lbHoek
@@ -59,6 +65,7 @@ class Rechthoek:
 
 p1 = Punt(3, 4)
 p2 = Punt(1, 12)
+p3 = Punt(1, 2)
 #p1.translatie(1, 2)
 #p1.invertX()
 #p1.invertY()
@@ -80,5 +87,6 @@ print(r2.oppervlakte())
 print(r2.omtrek())
 print(r2.rechterOnderHoek())
 
-print(r1 == r2)
-print(r1 > r2)
+print("maal", p3*p1)
+print("equals", r1 == r2)
+print("gt", r1 > r2)

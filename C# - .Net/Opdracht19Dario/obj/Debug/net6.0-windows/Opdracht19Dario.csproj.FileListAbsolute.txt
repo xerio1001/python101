@@ -1,0 +1,16 @@
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\Opdracht19Dario.FrmOpdracht19Dario.resources
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\Opdracht19Dario.csproj.GenerateResource.cache
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\Opdracht19Dario.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\Opdracht19Dario.AssemblyInfoInputs.cache
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\Opdracht19Dario.AssemblyInfo.cs
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\Opdracht19Dario.csproj.CoreCompileInputs.cache
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\bin\Debug\net6.0-windows\Opdracht19Dario.exe
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\bin\Debug\net6.0-windows\Opdracht19Dario.deps.json
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\bin\Debug\net6.0-windows\Opdracht19Dario.runtimeconfig.json
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\bin\Debug\net6.0-windows\Opdracht19Dario.dll
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\bin\Debug\net6.0-windows\ref\Opdracht19Dario.dll
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\bin\Debug\net6.0-windows\Opdracht19Dario.pdb
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\Opdracht19Dario.dll
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\ref\Opdracht19Dario.dll
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\Opdracht19Dario.pdb
+D:\Bureaublad\folders\school\python\python101\C# - .Net\Opdracht19Dario\obj\Debug\net6.0-windows\Opdracht19Dario.genruntimeconfig.cache
