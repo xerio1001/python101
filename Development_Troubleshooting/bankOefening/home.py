@@ -67,17 +67,11 @@ class Spaarrekening (Rekeningen):
 
 
 persoon1 = Persoon("Dario", "Van Hasselt", "02.01.08-892.05")
-gegevens1 = Zichtrekening("091-0122401-16")
+gegevens1 = Zichtrekening("091-0122401-16", 1000, "")
 gegevens2 = Spaarrekening("000-0000097-97", 1000, gegevens1)
 gegevens2.overschrijven(250)
 gegevens1.afhalen(100)
-gegevens1 = Zichtrekening("091-0122401-16", 1000, gegevens2)
+
 
 print("Zichtrekening ", gegevens1.overzicht)
 print("Spaarrekening ", gegevens2.overzicht)
-
-
-"""
-Op de zichtrekening kunnen we geld storten, geld afhalen, en geld overschrijven naar andere rekeningen, ook naar onze eigen spaarrekening.
-Op de spaarrekening kunnen we enkel geld terug overschrijven naar de gekoppelde zichtrekening. Opgelet: spaarrekening kan niet onder nul.
-"""
