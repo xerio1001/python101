@@ -15,10 +15,8 @@ class Persoon:
 
 
 class Bankrekening:
-    def __init__(self, saldo, bankrekeningNummer, persoon):
-        self.saldo = saldo
+    def __init__(self, bankrekeningNummer):
         self.bankrekeningNummer = bankrekeningNummer
-        self.persoon = persoon
 
     def controleBankrekNum(self):
         self.bankrekeningNummer = (
@@ -26,6 +24,7 @@ class Bankrekening:
             .replace("/", "")
             .replace("-", "")
             .replace(" ", "")
+            .replace("BE","")
         )
         if len(self.bankrekeningNummer) == 12:
             strippedNum = self.bankrekeningNummer[0:10]
@@ -40,10 +39,10 @@ class Bankrekening:
                 return "Geldig nummer"
 
             else:
-                return "Ongeldig nummer"
+                raise ValueError("Geen geldig nummer")
 
         else:
-            return "Ongeldige lengte van het nummer."
+            raise ValueError("Ongeldig nummer")
 
     def overschrijven(self):
         return NotImplemented
@@ -53,6 +52,10 @@ class Bankrekening:
 
 
 class Zichtrekening(Bankrekening):
+    def __init__(self, bankrekeningNummer, saldo):
+        super().__init__(self, bankrekeningNummer)
+        self.saldo = saldo
+
     def storten(self, bedrag):
         self.bedrag = bedrag
         self.saldo += self.bedrag
@@ -68,8 +71,9 @@ class Zichtrekening(Bankrekening):
 
 
 class Spaarrekening(Bankrekening):
-    def __init__(self, saldo, bankrekeningNummer, persoon, zicht):
-        super().__init__(self, saldo, bankrekeningNummer, persoon)
+    def __init__(self, bankrekeningNummer, saldo, zicht):
+        super().__init__(self, bankrekeningNummer)
+        self.saldo = saldo
         if isinstance(zicht, Zichtrekening):
             self.zicht = zicht
         else:
@@ -87,14 +91,13 @@ class Spaarrekening(Bankrekening):
             zicht.storten(bedrag)
         else:
             raise ValueError(
-                f"De rekening naar waar u probeert over te schrijven klopt niet {self.zicht}"
+                f"De rekening die u probeert te gebruiken klopt niet {self.zicht}"
             )
 
 
 persoon1 = Persoon("Van Hasselt", "Dario", "01.10.02-149.08")
-zicht1 = Zichtrekening(1000, "BE53979123456753", persoon1)
-spaar1 = Spaarrekening(2000, "BE11000123456748", persoon1, zicht1)
-
+zicht1 = Zichtrekening("BE53979123456753", 1000)
+spaar1 = Spaarrekening("BE11000123456748", 2000, zicht1)
 
 zicht1.storten(500)
 # print(zicht1.overzicht())
@@ -104,3 +107,9 @@ zicht1.afhalen(200)
 
 spaar1.overschrijven(1000, zicht1)
 # print(spaar1.overzicht())
+
+
+#BE11679123456748
+#BE36719123456781
+#BE23640123456791
+#BE34968123456790
