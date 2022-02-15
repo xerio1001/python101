@@ -76,43 +76,8 @@ class Spaarrekening(Bankrekening):
             raise ValueError(f"De rekening die u probeert te gebruiken klopt niet {self.zicht}")
 
     def overschrijven(self, bedrag, zicht):
-        if bedrag > self.saldo:
-            raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
-        elif self.zicht == zicht1:
+        if bedrag < self.saldo:
             self.saldo -= bedrag
             zicht.storten(bedrag)
         else:
-            raise ValueError(
-                f"De rekening naar waar u probeert over te schrijven klopt niet {self.zicht}"
-            )
-
-if __name__ == '__main__':
-    persoon1 = Persoon("Van Hasselt", "Dario", "01.10.02-149.08")
-    zicht1 = Zichtrekening(1000, "091-0122401-16", persoon1)
-    spaar1 = Spaarrekening(2000, "091-0122401-16", zicht1)
-    """
-    print("Start kapitaal van zicht1 ", zicht1.overzicht())
-    print("Start kapitaal van spaar1 ", spaar1.overzicht())
-    print()
-
-    zicht1.storten(500)
-    print("Storten van 500 op zichtrekening ", zicht1.overzicht())
-    print()
-    zicht1.afhalen(200)
-    print("Afhalen van 200 op zichtrekening ", zicht1.overzicht())
-    print()
-
-    spaar1.overschrijven(1000, zicht1)
-    print("Het overschrijven van 1000 van spaar naar zicht ",spaar1.overzicht())
-    print()
-    print("Het resultaat van zicht na overschrijven van spaar ", zicht1.overzicht())
-
-
-    persoon2 = Persoon("Nog iets", "Glenn", "01.02.03-123.04")
-    zicht2 = Zichtrekening(500, "BE36719123456781", persoon2)
-    spaar2 = Spaarrekening(1000, "BE23640123456791", zicht2)
-
-    zicht1.overschrijven(250, zicht2)
-    print()
-    print("Overzicht van zicht2 ",zicht2.overzicht())
-    """
+            raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
