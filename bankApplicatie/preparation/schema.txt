@@ -1,0 +1,16 @@
+PERSOON:
+- Naam
+- Voornaam
+- Rijksregisternummer
+
+BANKREKENING:
+- overzicht
+
+ZICHTREKENING(BANKREKENING):
+- Storten
+- Afhalen
+- Overschrijven
+
+SPAARREKENING(BANKREKENING):
+- Overschrijven (naar enkel eigen rekening)
+- (Kan niet onder nul)
