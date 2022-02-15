@@ -14,7 +14,6 @@ class Persoon:
     def __init__(self, naam, voornaam, rijksregisternummer):
         self.naam = naam
         self.voornaam = voornaam
-        # rijksregisternummer bestaat uit "##.##.##-###.##"
         self.rijksregisternummer = rijksregisternummer
 
 
@@ -57,11 +56,11 @@ class Zichtrekening(Bankrekening):
         if self.saldo > 0:
             self.saldo -= bedrag
         else:
-            raise InsufficientAmount(f"Niet genoeg saldo {self.saldo}")
+            raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
 
     def overschrijven(self, bedrag, rekening):
         if self.saldo < bedrag:
-            raise InsufficientAmount("U heeft niet voldoende saldo.")
+            raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
         else:
             self.saldo -= bedrag
             rekening.storten(bedrag)
@@ -74,15 +73,11 @@ class Spaarrekening(Bankrekening):
         if isinstance(zicht, Zichtrekening):
             self.zicht = zicht
         else:
-            raise ValueError(
-                f"De rekening die u probeert te gebruiken klopt niet {self.zicht}"
-            )
+            raise ValueError(f"De rekening die u probeert te gebruiken klopt niet {self.zicht}")
 
     def overschrijven(self, bedrag, zicht):
         if bedrag > self.saldo:
-            raise InsufficientAmount(
-                f"Het bedrag dat u probeert over te schrijven is groter dan uw huidig saldo {self.saldo}"
-            )
+            raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
         elif self.zicht == zicht1:
             self.saldo -= bedrag
             zicht.storten(bedrag)

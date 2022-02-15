@@ -1,13 +1,13 @@
 import pytest
 from bankapplicatie.main import *
 
-def test_wrongRekeningNummer():
+def test_verkeerdRekeningNummer():
     with pytest.raises(RekeningNummerError):
         persoon1 = Persoon("Van Hasselt", "Dario", "01.10.02-149.08")
-        zicht = Zichtrekening(500, "091-0122401-16", persoon1)
+        zicht = Zichtrekening(500, "191-0122401-16", persoon1)
 
 
-def test_creatieZichtrekening():
+def test_creatieZichtRekening():
     persoon1 = Persoon("Van Hasselt", "Dario", "01.10.02-149.08")
     zicht = Zichtrekening(500, "091-0122401-16", persoon1)
 
