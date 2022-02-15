@@ -1,13 +1,15 @@
-class InsufficientAmount(Exception):
-    pass
-
-
-class RekeningNummerError(Exception):
-    pass
+from bankapplicatie.possibleErrors import *
 
 
 class Persoon:
     def __init__(self, naam: str, voornaam: str, rijksregisternummer: str):
+        if type.persoon1.naam is not str:
+            raise FalsePersonConstructor("De naam is geen string.")
+        if type.persoon1.voornaam is not str:
+            raise FalsePersonConstructor("De voornaam is geen string.")
+        if type.persoon1.rijksregisternummer is not str:
+            raise FalsePersonConstructor("De rijksregisternummer is geen string.")
+        
         self.naam = naam
         self.voornaam = voornaam
         self.rijksregisternummer = rijksregisternummer
