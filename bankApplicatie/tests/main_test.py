@@ -20,7 +20,6 @@ def test_creatieZichtRekening():
 def test_storten():
     persoon1 = Persoon("Van Hasselt", "Dario", "01.10.02-149.08")
     zicht1 = Zichtrekening(500, "091-0122401-16", persoon1)
-
     zicht1.storten(500)
 
     assert zicht1.saldo == 1000
@@ -32,6 +31,8 @@ def test_afhalen():
     zicht1 = Zichtrekening(500, "091-0122401-16", persoon1)
     zicht1.afhalen(100)
 
+    assert zicht1.saldo == 400
+
 
 # Check to see if you can transfer money to your other account through the function "storten".
 def test_overschrijven():
@@ -39,3 +40,5 @@ def test_overschrijven():
     zicht1 = Zichtrekening(400, "091-0122401-16", persoon1)
     spaar1 = Spaarrekening(500, "091-0122401-16", zicht1)
     zicht1.overschrijven(200, spaar1)
+
+    assert zicht1.saldo == 200 and spaar1.saldo == 700
