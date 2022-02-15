@@ -2,16 +2,12 @@ class InsufficientAmount(Exception):
     pass
 
 
-class ValueError(Exception):
-    pass
-
-
 class RekeningNummerError(Exception):
     pass
 
 
 class Persoon:
-    def __init__(self, naam, voornaam, rijksregisternummer):
+    def __init__(self, naam: str, voornaam: str, rijksregisternummer: str):
         self.naam = naam
         self.voornaam = voornaam
         self.rijksregisternummer = rijksregisternummer
@@ -30,21 +26,12 @@ class Bankrekening:
         nummer = bankrekeningNummer[0:3] + bankrekeningNummer[4:-3]
         controleCijfers = bankrekeningNummer[-2:]
         try:
-            checkFormat = bool(
-                len(bankrekeningNummer) == 14
-                and bankrekeningNummer[3] == "-"
-                and bankrekeningNummer[-3] == "-"
-            )
+            checkFormat = bool(len(bankrekeningNummer) == 14 and bankrekeningNummer[3] == "-" and bankrekeningNummer[-3] == "-")
             checkControlnummer = bool(int(nummer) % 97 == int(controleCijfers))
         except:
             return False
 
-        if (
-            checkFormat
-            and checkControlnummer
-            and nummer.isdigit()
-            and controleCijfers.isdigit()
-        ):
+        if (checkFormat and checkControlnummer and nummer.isdigit() and controleCijfers.isdigit()):
             return True
         else:
             return False
@@ -55,20 +42,20 @@ class Bankrekening:
     def overzicht(self):
         return self.saldo
 
-
-class Zichtrekening(Bankrekening):
     def storten(self, bedrag):
         self.bedrag = bedrag
         self.saldo += self.bedrag
 
+
+class Zichtrekening(Bankrekening):
     def afhalen(self, bedrag):
-        if self.saldo > 0:
-            self.saldo -= bedrag
-        else:
+        if bedrag > self.saldo:
             raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
+        else:
+            self.saldo -= bedrag
 
     def overschrijven(self, bedrag, rekening):
-        if self.saldo < bedrag:
+        if bedrag > self.saldo:
             raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
         else:
             self.saldo -= bedrag
@@ -82,13 +69,11 @@ class Spaarrekening(Bankrekening):
         if isinstance(zicht, Zichtrekening):
             self.zicht = zicht
         else:
-            raise ValueError(
-                f"De rekening die u probeert te gebruiken klopt niet {self.zicht}"
-            )
+            raise RekeningNummerError(f"De rekening die u probeert te gebruiken klopt niet {self.zicht}")
 
     def overschrijven(self, bedrag, zicht):
-        if bedrag < self.saldo:
+        if bedrag > self.saldo:
+            raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
+        else:
             self.saldo -= bedrag
             zicht.storten(bedrag)
-        else:
-            raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
