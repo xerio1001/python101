@@ -2,19 +2,11 @@ import pytest
 from bankapplicatie.main import *
 from bankapplicatie.possibleErrors import *
 
-# Check to see if the person created has valid data.
-def test_falsePersonConstructor(naam, voornaam , rijksregisternummer):
-    persoon1 = Persoon("Van Hasselt", "Dario", "01.10.02-149.08")
-    with pytest.raises(FalsePersonConstructor):
-        assert persoon1.naam == "Van Hasselt"
-        assert persoon1.voornaam == "Dario"
-        assert persoon1.rijksregisternummer == "01.10.02-149.08"
-
 
 # Create dummy "persoon1" model.
 @pytest.fixture
 def persoon1():
-    """return a new person model"""
+    """return a new 'person' model"""
     return Persoon("Van Hasselt", "Dario", "01.10.02-149.08")
 
 
