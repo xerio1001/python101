@@ -81,6 +81,8 @@ class Spaarrekening(Bankrekening):
     def overschrijven(self, bedrag, zicht):
         if bedrag > self.saldo:
             raise InsufficientAmount(f"Niet genoeg saldo {self.saldo} < {bedrag}")
+        elif self.zicht != zicht:
+            raise wrongAccount(f"De rekening die u probeert te gebruiken is niet gelijk aan uw account.")
         else:
             self.saldo -= bedrag
             zicht.storten(bedrag)

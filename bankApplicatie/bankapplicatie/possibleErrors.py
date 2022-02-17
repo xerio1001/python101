@@ -12,3 +12,6 @@ class FalsePersonConstructor(Exception):
 
 class WrongPerson(Exception):
     pass
+
+class wrongAccount(Exception):
+    pass

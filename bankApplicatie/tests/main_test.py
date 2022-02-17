@@ -1,3 +1,4 @@
+from operator import truediv
 import pytest
 from bankapplicatie.main import *
 from bankapplicatie.possibleErrors import *
@@ -36,16 +37,21 @@ def spaar1(zicht1):
 @pytest.fixture
 def zicht2(persoon2):
     """return a new 'zicht2' model"""
-    return Zichtrekening(500, "091-0122401-161", persoon2)
+    return Zichtrekening(500, "091-0122401-16", persoon2)
 
 
                     # V person Constructor V #
 
 
 # Check if the program detects an error while creating a person model.
-def test_invalidPersonConstructor():
+@pytest.mark.parametrize(("lastname", "firstname", "rijk"),[
+    (1, "Dario", "2515691494"),
+    ("Van Hasselt", 1, "2515691494"),
+    ("Van Hasselt", "Dario", 5151)
+])
+def test_invalidPersonConstructor(lastname, firstname, rijk):
     with pytest.raises(FalsePersonConstructor):
-        persoon1 = Persoon(1, "Dario", "01.10.02-149.08")
+        persoon1 = Persoon(lastname, firstname, rijk)
 
 
 # Check to see if all the values are being stored correctly into the object.
@@ -75,9 +81,14 @@ def test_zichtValidAccountDetail(persoon1):
 
     
 # Check to see if the function "storten" works like it should. So, it should add the amount of money - "bedrag" - to the already possesed amount of money.
-def test_storten(zicht1):
-    zicht1.storten(500)
-    assert zicht1.saldo == 1000
+@pytest.mark.parametrize(("value", "result"),[
+    (500, 1000),
+    (50, 550),
+    (10000, 10500)
+])
+def test_storten(zicht1, value, result):
+    zicht1.storten(value)
+    assert zicht1.saldo == result
 
 
 # Check to see if your "bedrag" does not go below the already possesed amount of money.
@@ -121,5 +132,5 @@ def test_spaarInsufficientAmountByTransfer(spaar1):
 
 # Check to see if you're tranferring money to the correct person.
 def test_isNotValidPersonforTransfer(spaar1, zicht2):
-    with pytest.raises(WrongPerson):
+    with pytest.raises(wrongAccount):
         spaar1.overschrijven(100, zicht2)
