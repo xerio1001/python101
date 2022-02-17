@@ -27,7 +27,7 @@ class Bankrekening:
     def isValidBankrekNum(self, bankrekeningNummer):
         nummer = bankrekeningNummer[0:3] + bankrekeningNummer[4:-3]
         controleCijfers = bankrekeningNummer[-2:]
-        
+
         try:
             checkFormat = bool(len(bankrekeningNummer) == 14 and bankrekeningNummer[3] == "-" and bankrekeningNummer[-3] == "-")
             checkControlnummer = bool(int(nummer) % 97 == int(controleCijfers))
@@ -76,7 +76,7 @@ class Spaarrekening(Bankrekening):
         if isinstance(zicht, Zichtrekening):
             self.zicht = zicht
         else:
-            raise RekeningNummerError(f"De rekening die u probeert te gebruiken klopt niet {self.zicht}")
+            raise WrongPerson(f"De rekening die u probeert te gebruiken klopt niet {self.zicht}")
 
     def overschrijven(self, bedrag, zicht):
         if bedrag > self.saldo:

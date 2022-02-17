@@ -8,3 +8,7 @@ class RekeningNummerError(Exception):
 
 class FalsePersonConstructor(Exception):
     pass
+
+
+class WrongPerson(Exception):
+    pass
