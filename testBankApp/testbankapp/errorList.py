@@ -1,0 +1,2 @@
+class invalidPersonConstructor(Exception):
+    pass

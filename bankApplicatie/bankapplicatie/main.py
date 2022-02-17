@@ -8,7 +8,7 @@ class Persoon:
         if type(voornaam) is not str:
             raise FalsePersonConstructor("De voornaam is geen string.")
         if type(rijksregisternummer) is not str:
-            raise FalsePersonConstructor("De rijksregisternummer is geen string.")
+            raise FalsePersonConstructor("Het rijksregisternummer is geen string.")
         
         self.naam = naam
         self.voornaam = voornaam
