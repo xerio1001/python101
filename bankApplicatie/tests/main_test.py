@@ -3,7 +3,7 @@ from bankapplicatie.main import *
 from bankapplicatie.possibleErrors import *
 
 
-                                                                    # fixtures #
+                    # V fixtures V #
 
 
 # Create dummy "persoon1" model.
@@ -39,7 +39,7 @@ def zicht2(persoon2):
     return Zichtrekening(500, "091-0122401-161", persoon2)
 
 
-                                                                    # person Constructor #
+                    # V person Constructor V #
 
 
 # Check if the program detects an error while creating a person model.
@@ -53,7 +53,7 @@ def test_ValidValuesForPersonConstructor(persoon1):
     assert persoon1.naam == "Van Hasselt" and persoon1.voornaam == "Dario" and persoon1.rijksregisternummer == "01.10.02-149.08"
 
 
-                                                                    # zichtrekening tests #
+                    # V zichtrekening tests V #
 
 
 # Check if the application detects when the account number is invalid.
@@ -92,7 +92,7 @@ def test_zichtInsufficientAmountBywithdraw(zicht1):
         zicht1.afhalen(501)
 
 
-                                                                    # spaarrekening tests #
+                    # V spaarrekening tests V #
 
 
 # Check to see if the program detects an invalid account number.
