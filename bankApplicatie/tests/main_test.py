@@ -115,7 +115,7 @@ def test_zichtInsufficientAmountBywithdraw(zicht1, value):
         zicht1.afhalen(value)
 
 
-# Check to see if you can transfer money to your other account through the function "storten (on main page)".
+# Check to see if you can transfer money to an other account through the function "storten (on main page)".
 @pytest.mark.parametrize(("value", "zichtResult", "spaarResult"),[
     (200, 300, 1200),
     (500, 0, 1500)
