@@ -79,12 +79,12 @@ def test_zichtInsufficientAmountBywithdraw(zicht1):
 
 
 # Check to see if you can transfer money to your other account through the function "storten (on main page)".
-def test_zichtSufficientAmountBywithdraw(zicht1, spaar1):
+def test_zichtSufficientAmountByTransfer(zicht1, spaar1):
     zicht1.overschrijven(200, spaar1)
     assert zicht1.saldo == 300 and spaar1.saldo == 1200
 
 
 # Chech to see if you have enoug currency on your 'spaar' account for a money transfer.
-def test_spaarInsufficientAmountBywithdraw(spaar1):
+def test_spaarInsufficientAmountByTransfer(spaar1):
     with pytest.raises(InsufficientAmount):
         spaar1.overschrijven(9000000, zicht1)
