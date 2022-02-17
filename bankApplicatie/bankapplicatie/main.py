@@ -67,7 +67,11 @@ class Zichtrekening(Bankrekening):
 class Spaarrekening(Bankrekening):
     def __init__(self, saldo, bankrekeningNummer, zicht):
         self.saldo = saldo
-        self.bankrekeningNummer = bankrekeningNummer
+        if self.isValidBankrekNum(bankrekeningNummer):
+            self.bankrekeningNummer = bankrekeningNummer
+        else:
+            raise RekeningNummerError("Geen geldig rekeningnummer")
+            
         if isinstance(zicht, Zichtrekening):
             self.zicht = zicht
         else:

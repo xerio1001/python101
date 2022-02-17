@@ -3,6 +3,12 @@ from bankapplicatie.main import *
 from bankapplicatie.possibleErrors import *
 
 
+# Check if the program detects an error while creating a person model.
+def test_invalidPersonConstructor():
+    with pytest.raises(FalsePersonConstructor):
+        persoon1 = Persoon(1, "Dario", "01.10.02-149.08")
+
+
 # Create dummy "persoon1" model.
 @pytest.fixture
 def persoon1():
@@ -22,11 +28,23 @@ def test_creatieZichtRekening(persoon1):
     assert (zicht1.saldo == 500 and zicht1.persoon == persoon1 and zicht1.bankrekeningNummer == "091-0122401-16")
 
 
+# Check to see if the program detects an invalid account number.
+def test_zichtValidAccountDetail(persoon1):
+    with pytest.raises(RekeningNummerError):
+        Zichtrekening(500, "091-0122401-161", persoon1)
+
+
 # Create dummy "zicht1" model.
 @pytest.fixture
 def zicht1(persoon1):
     """return a new 'zicht' model"""
     return Zichtrekening(500, "091-0122401-16", persoon1)
+
+
+# Check to see if the program detects an invalid account number.
+def test_spaarValidAccountDetail(zicht1):
+    with pytest.raises(RekeningNummerError):
+        Spaarrekening(1000, "091-0122401-161", zicht1)
 
 
 # Check if the account you create is ceated succesfully and everything is valid. (Spaarrekening)
@@ -55,12 +73,18 @@ def test_afhalen(zicht1):
 
 
 # Check to see if you do not cross your current currency while making a withdrawl.
-def test_insufficientAmountBywithdraw(zicht1):
+def test_zichtInsufficientAmountBywithdraw(zicht1):
     with pytest.raises(InsufficientAmount):
         zicht1.afhalen(501)
 
 
 # Check to see if you can transfer money to your other account through the function "storten (on main page)".
-def test_sufficientAmountBywithdraw(zicht1, spaar1):
+def test_zichtSufficientAmountBywithdraw(zicht1, spaar1):
     zicht1.overschrijven(200, spaar1)
     assert zicht1.saldo == 300 and spaar1.saldo == 1200
+
+
+# Chech to see if you have enoug currency on your 'spaar' account for a money transfer.
+def test_spaarInsufficientAmountBywithdraw(spaar1):
+    with pytest.raises(InsufficientAmount):
+        spaar1.overschrijven(9000000, zicht1)
