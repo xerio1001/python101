@@ -92,15 +92,26 @@ def test_storten(zicht1, value, result):
 
 
 # Check to see if your "bedrag" does not go below the already possesed amount of money.
-def test_afhalen(zicht1):
-    zicht1.afhalen(100)
-    assert zicht1.saldo == 400
+@pytest.mark.parametrize(("value", "result"),[
+    (499, 1),
+    (1, 499),
+    (500, 0),
+    (0, 500)
+])
+def test_afhalen(zicht1, value, result):
+    zicht1.afhalen(value)
+    assert zicht1.saldo == result
 
 
 # Check to see if you do not cross your current currency while making a withdrawl.
-def test_zichtInsufficientAmountBywithdraw(zicht1):
+@pytest.mark.parametrize(("value"),[
+    (501),
+    (1000),
+    (1234)
+])
+def test_zichtInsufficientAmountBywithdraw(zicht1, value):
     with pytest.raises(InsufficientAmount):
-        zicht1.afhalen(501)
+        zicht1.afhalen(value)
 
 
                     # V spaarrekening tests V #
