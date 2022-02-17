@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 from operator import truediv
 import pytest
 from bankapplicatie.main import *
@@ -104,14 +105,24 @@ def test_afhalen(zicht1, value, result):
 
 
 # Check to see if you do not cross your current currency while making a withdrawl.
-@pytest.mark.parametrize(("value"),[
-    (501),
-    (1000),
-    (1234)
+@pytest.mark.parametrize("value",[
+    501,
+    1000,
+    1234
 ])
 def test_zichtInsufficientAmountBywithdraw(zicht1, value):
     with pytest.raises(InsufficientAmount):
         zicht1.afhalen(value)
+
+
+# Check to see if you can transfer money to your other account through the function "storten (on main page)".
+@pytest.mark.parametrize(("value", "zichtResult", "spaarResult"),[
+    (200, 300, 1200),
+    (500, 0, 1500)
+])
+def test_zichtSufficientAmountByTransfer(zicht1, spaar1, value, zichtResult, spaarResult):
+    zicht1.overschrijven(value, spaar1)
+    assert zicht1.saldo == zichtResult and spaar1.saldo == spaarResult
 
 
                     # V spaarrekening tests V #
@@ -129,16 +140,21 @@ def test_creatieSpaarRekening(zicht1):
     assert spaar1.saldo == 1000 and spaar1.bankrekeningNummer == "091-0122401-16" and spaar1.zicht == zicht1
 
 
-# Check to see if you can transfer money to your other account through the function "storten (on main page)".
-def test_zichtSufficientAmountByTransfer(zicht1, spaar1):
-    zicht1.overschrijven(200, spaar1)
-    assert zicht1.saldo == 300 and spaar1.saldo == 1200
-
-
 # Chech to see if you have enoug currency on your 'spaar' account for a money transfer.
 def test_spaarInsufficientAmountByTransfer(spaar1):
     with pytest.raises(InsufficientAmount):
         spaar1.overschrijven(9000000, zicht1)
+
+    
+# Check to see if you can transfer money to your other account through the function "storten (on main page)".
+@pytest.mark.parametrize(("value", "spaarResult", "zichtResult"),[
+    (200, 800, 700),
+    (500, 500, 1000),
+    (1000, 0, 1500)
+])
+def test_spaarSufficientAmountByTransfer(spaar1, zicht1, value, zichtResult, spaarResult):
+    spaar1.overschrijven(value, zicht1)
+    assert spaar1.saldo == spaarResult and zicht1.saldo == zichtResult
 
 
 # Check to see if you're tranferring money to the correct person.
