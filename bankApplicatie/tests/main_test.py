@@ -16,6 +16,13 @@ def persoon1():
     return Persoon("Van Hasselt", "Dario", "01.10.02-149.08")
 
 
+# Check to see if all the values are being stored correctly into the object.
+def test_isValidValuesForPersonConstructor(persoon1):
+    assert persoon1.naam == "Van Hasselt"
+    assert persoon1.voornaam == "Dario"
+    assert persoon1.rijksregisternummer == "01.10.02-149.08"
+
+
 # Check if the application detects when the account number is invalid.
 def test_verkeerdRekeningNummer(persoon1):
     with pytest.raises(RekeningNummerError):

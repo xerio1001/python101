@@ -27,6 +27,7 @@ class Bankrekening:
     def isValidBankrekNum(self, bankrekeningNummer):
         nummer = bankrekeningNummer[0:3] + bankrekeningNummer[4:-3]
         controleCijfers = bankrekeningNummer[-2:]
+        
         try:
             checkFormat = bool(len(bankrekeningNummer) == 14 and bankrekeningNummer[3] == "-" and bankrekeningNummer[-3] == "-")
             checkControlnummer = bool(int(nummer) % 97 == int(controleCijfers))
@@ -71,7 +72,7 @@ class Spaarrekening(Bankrekening):
             self.bankrekeningNummer = bankrekeningNummer
         else:
             raise RekeningNummerError("Geen geldig rekeningnummer")
-            
+
         if isinstance(zicht, Zichtrekening):
             self.zicht = zicht
         else:
