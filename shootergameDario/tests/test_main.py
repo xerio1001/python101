@@ -49,3 +49,4 @@ def test_InvalidSizeConstructorMap(width, height):
 # Check to see if you can create a map size with the right values.
 def test_validSizeConstructorMap(mapSize1):
     assert mapSize1.width == 5 and mapSize1.height == 5 and mapSize1.size == 25
+ 

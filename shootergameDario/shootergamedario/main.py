@@ -13,11 +13,13 @@ class Movement:
 
 class Stats:
     def __init__(self, width, height):
+        # Size construct of an object.
         if self.isValidSize(width, height):
             self.width = width
             self.height = height
         else:
             raise InvalidObjectSize(f"The sizes can't be 0 or smaller.")
+        # End of size constructor
 
     def health(self):
         pass
@@ -67,7 +69,7 @@ class Map:
 
 
 class Player(Movement, Stats, Actions):
-    def __init__(self):
+    def __init__(self, shoot, damageTaken, movement, turn, position, direction, firepower, currentHealth, armour):
         pass
 
     def armour(self):
@@ -75,25 +77,25 @@ class Player(Movement, Stats, Actions):
 
 
 class Enemy(Movement, Stats, Actions):
-    def __init__(self):
+    def __init__(self, shoot, damageTaken, movement, turn, position, direction, firepower, currentHealth):
         pass
 
 
 class Bullet(Stats):
-    def __init__(self):
+    def __init__(self, position, direction, currentFirepower):
         pass
 
 
 class Rocks(Stats):
-    def __init__(self):
+    def __init__(self, position, size):
         pass
 
 
 class Crates(Stats):
-    def __init__(self):
+    def __init__(self, damageTaken, position, size, beginningHealth):
         pass
 
 
 class Buildings(Stats):
-    def __init__(self):
+    def __init__(self, damageTaken, position, size, beginningHealth):
         pass
