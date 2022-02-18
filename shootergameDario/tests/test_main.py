@@ -26,7 +26,7 @@ def mapSize1():
 ])
 def test_invalidSizeConstructorObject(width, height):
     with pytest.raises(InvalidObjectSize):
-        sizeRock1 = Stats(width, height)
+        Stats(width, height)
 
 
 # Check to see if you can create the size of an object with the right values.
@@ -43,7 +43,7 @@ def test_validSizeConstructorObject(objectSize1):
 ])
 def test_InvalidSizeConstructorMap(width, height):
     with pytest.raises(InvalidMapSize):
-        sizeMap = Map(width, height)
+        Map(width, height)
 
 
 # Check to see if you can create a map size with the right values.

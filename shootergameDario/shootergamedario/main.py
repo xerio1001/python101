@@ -56,14 +56,14 @@ class Map:
             self.height = height
             self.size = self.width * self.height
         else:
-            raise InvalidMapSize(f"The size of the map has to be bigger than 20")
+            raise InvalidMapSize(f"The size of the map has to be bigger than {width * height}")
 
     def isValidMapSize(self, width, height):
         size = width * height
         if size < 20:
-            False
+            return False
         else:
-            True
+            return True
 
 
 class Player(Movement, Stats, Actions):
