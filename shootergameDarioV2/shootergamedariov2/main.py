@@ -3,33 +3,63 @@ from shootergamedariov2.createPossibleErrors import *
 
 # Holds every value of player and enemy.
 class StatsOfEntity:
-    def __init__(self, shoot:bool, damageTaken:int, movement:str, turn:str, position:tuple, direction:str, firepower:int, beginningHealth:int, currentHealth:int):
+    def __init__(self, shoot:bool, damageTaken:int, movement:str, turn:str, x, y, direction:str, firepower:int, currentHealth:int):
         self.shoot = shoot
         self.damageTaken = damageTaken
         self.movement = movement
+        self.x = x
+        self.y = y
         self.turn = turn
-        self.position = position
         self.direction = direction
         self.firepower = firepower
-        self.beginningHealth = beginningHealth
         self.currentHealth = currentHealth
+    
+    def calcDamageTaken(self):
+        self.currentHealth -= self.damageTaken
+
+    def calcMovement(self):
+        if self.movement == "front":
+            self.x += 1
+        if self.movement == "back":
+            self.x -= 1
+        if self.movement == "up":
+            self.y += 1
+        if self.movement == "down":
+            self.y -= 1
+
+    def checkDirection(self):
+        if self.turn == "right":
+            self.direction += 45
+        elif self.turn == "left":
+            self.direction -= 45
+
+        if self.direction < -135:
+            self.direction == 180
+        elif self.direction > 180:
+            self.direction == -135
+
+    def shootBullet(self):
+        if self.shoot == True:
+            pass
+
 
 
 # Holds every value of an object like rocks, etc.
 class StatsOfStaticObject:
-    def __init__(self, position:tuple, width:int, height:int, damageTaken:int, startingHealth:int, currentHealth:int):
-        self.position = position
+    def __init__(self, x, y, width:int, height:int, damageTaken:int, currentHealth:int):
+        self.x = x
+        self.y = y
         self.width = width
         self.height = height
         self.damageTaken = damageTaken
-        self.startingHealth = startingHealth
         self.currentHealth = currentHealth
 
 
 # Creates a class for a bullet.
 class bullet:
-    def __init__(self, position:tuple, direction:str, firepowerOfEntity:int):
-        self.postion = position
+    def __init__(self, x, y, direction:str, firepowerOfEntity:int):
+        self.x = x
+        self.y = y
         self.direction = direction
         self.firepowerOfEntity = firepowerOfEntity
 
@@ -60,29 +90,17 @@ class Map:
 
 # Creates a class for a player.
 class Player(StatsOfEntity):
-    def __init__(self, shoot:bool, damageTaken:int, movement:str, turn:str, position:tuple, direction:str, firepower:int, beginningHealth:int, currentHealth:int, armour:int):
+    def __init__(self, shoot:bool, damageTaken:int, movement:str, turn:str, x, y, direction:str, firepower:int, armour:int):
         self.shoot = shoot
         self.damageTaken = damageTaken
         self.movement = movement
         self.turn = turn
-        self.position = position
+        self.x = x
+        self.y = y
         self.direction = direction
         self.firepower = firepower
-
-        if self.isValidAmountOFHealth(beginningHealth):
-            self.beginningHealth = beginningHealth
-        else:
-            raise InsufficientAmountOfHealth(f"The starting amount of health has to be greater than 10.")
-
-        self.currentHealth = currentHealth
         self.armour = armour
 
-    def isValidAmountOFHealth(self, beginningHealth):
-        if beginningHealth < 10:
-            return False
-        else:
-            True
-        
 
 # Creates a class for an enemy.
 class Enemy(StatsOfEntity):

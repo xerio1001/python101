@@ -7,24 +7,24 @@ from shootergamedariov2.createPossibleErrors import *
 def playerModel1():
     """Creates a 'player' model dummy"""
     # Required stats:
-    # shoot:bool, damagTaken:int, movement:str, turn:str, position:tuple, direction:str, firepower:int, beginningHealth:int, currentHealth:int, armour:int
-    return Player(False, 0, 'front', "none", (1, 5), "front", 5, 20, 20, 10)
+    # shoot:bool, damagTaken:int, movement:str, turn:str, x, y, direction:str, firepower:int, currentHealth:int, armour:int
+    return Player(False, 0, 'front', "none", 1, 5, "front", 5, 20, 10)
 
 
 @pytest.fixture
 def enemyModel1():
     """Creates a 'enemy' model dummy"""
     # Required stats:
-    # shoot:bool, damagTaken:int, movement:str, turn:str, position:tuple, direction:str, firepower:int, beginningHealth:int, currentHealth:int
-    return Enemy(False, 2, 'front', "none", (10, 5), "front", 5, 20, 18)
+    # shoot:bool, damagTaken:int, movement:str, turn:str, x, y, direction:str, firepower:int, currentHealth:int
+    return Enemy(False, 2, 'front', "none", 10, 5, "front", 5, 18)
 
 
 @pytest.fixture
 def falsePlayerModel1():
     """Creates a incorrect 'player' model dummy"""
     # Required stats:
-    # shoot:bool, damagTaken:int, movement:str, turn:str, position:tuple, direction:str, firepower:int, beginningHealth:int, currentHealth:int, armour:int
-    return Player(False, 0, 'front', "none", (2, 6), "front", 5, 9, 20, 10)
+    # shoot:bool, damagTaken:int, movement:str, turn:str, x, y, direction:str, firepower:int, currentHealth:int, armour:int
+    return Player(False, 0, 'front', "none", 2, 6, "front", 5, 20, 10)
 
 
 @pytest.fixture
@@ -64,9 +64,3 @@ def test_invalidValuesOfMapSize(width, height):
 
 def test_validMapSize(mapSize1Of100):
     assert mapSize1Of100.width == 10 and mapSize1Of100.height == 10 and mapSize1Of100.size == 100
-
-
-def test_invalidAmountOfHealth(falsePlayerModel1):
-    with pytest.raises(InsufficientAmountOfHealth):
-        falsePlayerModel1
-        
