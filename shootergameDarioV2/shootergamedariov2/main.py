@@ -4,7 +4,16 @@ from shootergamedariov2.createPossibleErrors import *
 # Holds every value of player and enemy.
 class StatsOfEntity:
     def __init__(self, shoot:bool, damagTaken:int, movement:str, turn:str, position:tuple, direction:str, firepower:int, beginningHealth:int, currentHealth:int):
-        pass
+        if self.isValidAmountOFHealth(beginningHealth):
+            self.beginningHealth = beginningHealth
+        else:
+            raise InsufficientAmountOfHealth(f"The starting amount of health has to be greater than 10.")
+
+    def isValidAmountOFHealth(self, beginningHealth):
+        if beginningHealth < 10:
+            return False
+        else:
+            True
 
 
 # Holds every value of an object like rocks, etc.
@@ -43,8 +52,9 @@ class Map:
 
 # Creates a class for a player.
 class Player(StatsOfEntity):
-    pass
-
+    def __init__(self, shoot:bool, damagTaken:int, movement:str, turn:str, position:tuple, direction:str, firepower:int, beginningHealth:int, currentHealth:int, armour:int):
+        super.__init__(self, shoot, damagTaken, movement, turn, position, direction, firepower, beginningHealth, currentHealth)
+        pass
 
 # Creates a class for an enemy.
 class Enemy(StatsOfEntity):

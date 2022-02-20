@@ -4,3 +4,7 @@ class InvalidMapSize(Exception):
 
 class TypeError(Exception):
     pass
+
+
+class InsufficientAmountOfHealth(Exception):
+    pass

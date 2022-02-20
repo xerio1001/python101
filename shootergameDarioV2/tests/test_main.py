@@ -20,6 +20,13 @@ def enemyModel1():
 
 
 @pytest.fixture
+def falsePlayerModel1():
+    """Creates a incorrect 'player' model dummy"""
+    # Required stats:
+    # shoot:bool, damagTaken:int, movement:str, turn:str, position:tuple, direction:str, firepower:int, beginningHealth:int, currentHealth:int, armour:int
+    return Player(False, 0, 'front', "none", (2, 6), "voor", 5, 9, 20, 10)
+
+@pytest.fixture
 def mapSize1Of100():
     """Creates a 'map size' model."""
     return Map(10, 10)
@@ -46,7 +53,8 @@ def test_validValueTypesOfMapSize(width, height):
 
 @pytest.mark.parametrize(("width", "height"),[
     (9, 2),
-    (1, 1)
+    (1, 1),
+    (2, 8)
 ])
 def test_invalidValuesOfMapSize(width, height):
     with pytest.raises(InvalidMapSize):
@@ -55,3 +63,8 @@ def test_invalidValuesOfMapSize(width, height):
 
 def test_validMapSize(mapSize1Of100):
     assert mapSize1Of100.width == 10 and mapSize1Of100.height == 10 and mapSize1Of100.size == 100
+
+
+def test_invalidAmountOfHealth(falsePlayerModel1):
+    with pytest.raises(InsufficientAmountOfHealth):
+        falsePlayerModel1
