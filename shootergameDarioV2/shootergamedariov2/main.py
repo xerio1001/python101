@@ -13,6 +13,7 @@ class StatsOfEntity:
         self.direction = direction
         self.firepower = firepower
         self.currentHealth = currentHealth
+        self.isHit = isHit
     
     def calcDamageTaken(self):
         self.currentHealth -= self.damageTaken
@@ -38,62 +39,68 @@ class StatsOfEntity:
         elif self.direction > 180:
             self.direction == -135
 
+    def isEntityHit(self):
+        if bullet.x == StatsOfEntity.x and bullet.y == StatsOfEntity.y or bullet.x == StatsOfStaticObject.x and bullet.y == StatsOfStaticObject.y:
+            return True
+        else:
+            return False
+
     def shootBullet(self):
         if self.shoot == True:
             if self.direction == 0:
                 while True:
                     self.bulet.x += 1
                     self.bullet.y += 0
-                    if Player == "hit" or Enemy == "hit":
+                    if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
             elif self.direction == 45:
                 while True:
                     self.bulet.x += 1
                     self.bullet.y -= 1
-                    if Player == "hit" or Enemy == "hit":
+                    if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
             elif self.direction == 90:
                 while True:
                     self.bulet.x += 0
                     self.bullet.y -= 1
-                    if Player == "hit" or Enemy == "hit":
+                    if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
             elif self.direction == 135:
                 while True:
                     self.bulet.x -= 1
                     self.bullet.y -= 1
-                    if Player == "hit" or Enemy == "hit":
+                    if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
             elif self.direction == 180:
                 while True:
                     self.bulet.x -= 1
                     self.bullet.y += 0
-                    if Player == "hit" or Enemy == "hit":
+                    if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
             elif self.direction ==-135:
                 while True:
                     self.bulet.x -= 1
                     self.bullet.y += 1
-                    if Player == "hit" or Enemy == "hit":
+                    if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
             elif self.direction == -90:
                 while True:
                     self.bulet.x += 0
                     self.bullet.y += 1
-                    if Player == "hit" or Enemy == "hit":
+                    if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
             elif self.direction == -45:
                 while True:
                     self.bulet.x += 1
                     self.bullet.y += 1
-                    if Player == "hit" or Enemy == "hit":
+                    if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
 
