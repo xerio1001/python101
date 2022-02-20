@@ -54,12 +54,16 @@ class StatsOfEntity:
                     if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
+                    elif bullet.x > Map.width or bullet.y > Map.height:
+                        break
             elif self.direction == 45:
                 while True:
                     self.bulet.x += 1
                     self.bullet.y -= 1
                     if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
+                        break
+                    elif bullet.x > Map.width or bullet.y > Map.height:
                         break
             elif self.direction == 90:
                 while True:
@@ -68,12 +72,16 @@ class StatsOfEntity:
                     if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
+                    elif bullet.x > Map.width or bullet.y > Map.height:
+                        break
             elif self.direction == 135:
                 while True:
                     self.bulet.x -= 1
                     self.bullet.y -= 1
                     if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
+                        break
+                    elif bullet.x > Map.width or bullet.y > Map.height:
                         break
             elif self.direction == 180:
                 while True:
@@ -82,12 +90,16 @@ class StatsOfEntity:
                     if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
+                    elif bullet.x > Map.width or bullet.y > Map.height:
+                        break
             elif self.direction ==-135:
                 while True:
                     self.bulet.x -= 1
                     self.bullet.y += 1
                     if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
+                        break
+                    elif bullet.x > Map.width or bullet.y > Map.height:
                         break
             elif self.direction == -90:
                 while True:
@@ -96,12 +108,16 @@ class StatsOfEntity:
                     if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
                         break
+                    elif bullet.x > Map.width or bullet.y > Map.height:
+                        break
             elif self.direction == -45:
                 while True:
                     self.bulet.x += 1
                     self.bullet.y += 1
                     if StatsOfEntity.isEntityHit():
                         self.damageTaken = self.firepower
+                        break
+                    elif bullet.x > Map.width or bullet.y > Map.height:
                         break
 
 
