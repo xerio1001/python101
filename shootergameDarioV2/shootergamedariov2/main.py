@@ -3,7 +3,7 @@ from shootergamedariov2.createPossibleErrors import *
 
 # Holds every value of player and enemy.
 class StatsOfEntity:
-    def __init__(self, shoot:bool, damageTaken:int, movement:str, turn:str, x, y, direction:str, firepower:int, currentHealth:int):
+    def __init__(self, shoot:bool, damageTaken:int, movement:str, turn:str, x, y, direction:str, firepower:int, currentHealth:int, isHit:bool):
         self.shoot = shoot
         self.damageTaken = damageTaken
         self.movement = movement
@@ -40,7 +40,62 @@ class StatsOfEntity:
 
     def shootBullet(self):
         if self.shoot == True:
-            pass
+            if self.direction == 0:
+                while True:
+                    self.bulet.x += 1
+                    self.bullet.y += 0
+                    if Player == "hit" or Enemy == "hit":
+                        self.damageTaken = self.firepower
+                        break
+            elif self.direction == 45:
+                while True:
+                    self.bulet.x += 1
+                    self.bullet.y -= 1
+                    if Player == "hit" or Enemy == "hit":
+                        self.damageTaken = self.firepower
+                        break
+            elif self.direction == 90:
+                while True:
+                    self.bulet.x += 0
+                    self.bullet.y -= 1
+                    if Player == "hit" or Enemy == "hit":
+                        self.damageTaken = self.firepower
+                        break
+            elif self.direction == 135:
+                while True:
+                    self.bulet.x -= 1
+                    self.bullet.y -= 1
+                    if Player == "hit" or Enemy == "hit":
+                        self.damageTaken = self.firepower
+                        break
+            elif self.direction == 180:
+                while True:
+                    self.bulet.x -= 1
+                    self.bullet.y += 0
+                    if Player == "hit" or Enemy == "hit":
+                        self.damageTaken = self.firepower
+                        break
+            elif self.direction ==-135:
+                while True:
+                    self.bulet.x -= 1
+                    self.bullet.y += 1
+                    if Player == "hit" or Enemy == "hit":
+                        self.damageTaken = self.firepower
+                        break
+            elif self.direction == -90:
+                while True:
+                    self.bulet.x += 0
+                    self.bullet.y += 1
+                    if Player == "hit" or Enemy == "hit":
+                        self.damageTaken = self.firepower
+                        break
+            elif self.direction == -45:
+                while True:
+                    self.bulet.x += 1
+                    self.bullet.y += 1
+                    if Player == "hit" or Enemy == "hit":
+                        self.damageTaken = self.firepower
+                        break
 
 
 
