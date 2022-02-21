@@ -2,6 +2,9 @@ from concurrent.futures import thread
 import requests
 import threading
 import concurrent.futures
+import time
+
+start = time.perf_counter()
 
 list_images = [
     'https://images.unsplash.com/photo-1516117172878-fd2c41f4a759',
@@ -32,6 +35,9 @@ def do_downloadImages(url):
 
 with concurrent.futures.ThreadPoolExecutor() as result:
     result.map(do_downloadImages, list_images)
+
+finish = time.perf_counter()
+print(f'{finish - start:.2f}')
 
 # threads = []
 # for url in list_images:
