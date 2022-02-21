@@ -37,7 +37,7 @@ with concurrent.futures.ThreadPoolExecutor() as result:
     result.map(do_downloadImages, list_images)
 
 finish = time.perf_counter()
-print(f'{finish - start:.2f}')
+print(f'Gefinished in {finish - start:.2f}')
 
 # threads = []
 # for url in list_images:
