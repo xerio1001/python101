@@ -1,4 +1,6 @@
+from concurrent.futures import thread
 import requests
+import threading
 import concurrent.futures
 
 list_images = [
@@ -30,3 +32,9 @@ def do_downloadImages(url):
 
 with concurrent.futures.ThreadPoolExecutor() as result:
     result.map(do_downloadImages, list_images)
+
+# threads = []
+# for url in list_images:
+#    t = threading.Thread(target=do_downloadImages, args=[url])
+#    t.start()
+#    threads.append(t)
