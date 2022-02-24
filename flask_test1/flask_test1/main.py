@@ -8,9 +8,16 @@ app = Flask(__name__)
 def home():
     return \
         """
-        Welkom! 
-        </br>
-        <a href='/data'>Naar data</a>
+        <body style='background-color: #ededed'>
+        <center>
+        <h2>Welkom!</h2> 
+        <p>
+        <a href='/data' style='font-size: 14pt; text-decoration: none;'>Naar data</a> 
+        </p>
+        <p>
+        <a href='/hobbies' style='font-size: 14pt; text-decoration: none;'>Naar hobbies</a>
+        </p>
+        </center>
         """
 
 @app.route('/data')
@@ -47,9 +54,12 @@ def data():
 def hobbies():
     return \
      """
+     <center>
      Actieve hobbies zijn: gitaar/gamen 
-     </br> 
-     <a href='http://127.0.0.1:8080'>Terug naar home</a>
+     <p> 
+     <a href='/'>Terug naar home</a>
+     </p>
+     </center>
      """
 
 if __name__ == "__main__":
