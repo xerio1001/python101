@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../static/style.css">
+    <title>
+        {% if titel %}
+        {{ titel }}
+        {% else %}
+        titel
+        {% endif %}
+    </title>
+</head>
+<body>
+    <div id="container">
+        <div id="header"><h1>Welkom op mijn webapplicatie!</h1></div>
+
+        <div id="menu">
+            <a href="/data">Data</a>
+            <a href="/">Home</a>
+            <a href="/hobbies">Terug</a>
+        </div>
+
+        <div id="inhoud">
+            <img src="/static/gaming.jpg">
+            <p>Mijn gaming hobbie gaat al in van toen ik 8 jaar was.</p>
+        </div>
+    </div>
+</body>
+</html>

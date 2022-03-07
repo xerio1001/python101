@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../static/style.css">
+    <title>
+        {% if titel %}
+        {{ titel }}
+        {% else %}
+        titel
+        {% endif %}
+    </title>
+</head>
+<body>
+    <div id="container">
+        <div id="header"><h1>Welkom op mijn webapplicatie!</h1></div>
+
+        <div id="menu">
+            <a href="/">Home</a>
+            <a href="/hobbies">Hobbies</a>
+        </div>
+
+        <div id="inhoud">
+            <div id="content-voornaam" class="table-boxes">
+                Voornaam: Dario
+            </div>
+            <div id="content-achternaam" class="table-boxes">
+                Achternaam: Van Hasselt
+            </div>
+            <div id="content-leeftijd" class="table-boxes">
+                Leeftijd: 20
+            </div>
+            <div id="content-plaats" class="table-boxes">
+                Woonplaats: Mol
+            </div>
+        </div>
+    </div>
+</body>
+</html>

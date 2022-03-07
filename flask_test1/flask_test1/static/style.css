@@ -1,0 +1,86 @@
+html, body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #2f2f38;
+    color: white;
+    font-size: 12pt;
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+#container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    border: purple 1px solid;
+    border-radius: 10px;
+    padding: 10px 10px;
+    background-color: #1d2530;
+}
+
+#header{
+    width: 100%;
+    height: 30%;
+    position: relative;
+}
+
+#menu{
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    word-spacing: 10pt;
+}
+
+#menu-hobbies{
+    width: 100%;
+    height: auto;
+    position: relative;
+    word-spacing: 10pt;
+}
+
+#inhoud{
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.table-boxes{
+    width: 15%;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px purple solid;
+    border-radius: 5px;
+    box-shadow: 1px 1px purple;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+}
+
+a:link{
+    color: white;
+    text-decoration: underline;
+    font-size: 16pt;
+}
+
+a:visited{
+    color: white;
+    text-decoration: underline;
+    font-size: 16pt;
+}
+
+a:hover{
+    color: #3f426e;
+    text-decoration: underline;
+    font-size: 17.5pt;
+}
+
+hr{
+    border: 2px dashed white;
+}
