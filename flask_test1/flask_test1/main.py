@@ -1,15 +1,14 @@
-from turtle import title
 from flask import Flask, render_template
 
 # we maken een object met de naam app van de Flask module
 app = Flask(__name__)
 
 @app.route('/') # dit leidt onze webpagina naar de juiste functie
-def home(titel=None):
+def home():
     return render_template('index.html', titel='Home Page')
 
 @app.route('/data')
-def data(titel=None):
+def data():
     return render_template('data.html', titel='Data')
 
 @app.route('/hobbies')
