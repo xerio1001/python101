@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -41,7 +41,7 @@ students = {
     }
 }
 
-classes = {
+lessons = {
     0: {
         "Name": "Python",
         "Max": 100
@@ -69,13 +69,13 @@ classes = {
 }
 
 courses = {
-     0: {
+    0: {
         "Name": "Junior Python Developer",
-        "ClassesID": [0, 1, 2]
+        "lessonsID": [0, 1, 2]
     },
     1: {
-        "Name": "Full-Stack Webdeveloper",
-        "ClassesID": [3, 4, 5]
+        "Name": "Ful-Stack Webdeveloper",
+        "lessonsID": [3, 4, 5]
     }
 }
 
@@ -89,7 +89,7 @@ def homeScreen():
             <h1>Welcome to 'CVO De Verdieping'</h1>
             <a href='/courses'>Courses</a>
             <br>
-            <a href='/classes'>Classes</a>
+            <a href='/lessons'>lessons</a>
             <br>
             <a href='/students'>Students</a>
         </center>
@@ -99,7 +99,15 @@ def homeScreen():
 
 @app.route('/courses')
 def showCourses():
-    return jsonify(courses)
+    tempList = []
+    limit = request.args.get('limit')
+    if limit != None:
+        limit = int(limit)
+        for i in range(limit):
+            tempList.append(courses[i])
+        return jsonify(tempList)
+    else:
+        return jsonify(courses)
 
 @app.route('/courses/<int:id>', methods=['GET'])
 def getCourses(id):
@@ -113,42 +121,76 @@ def getCoursesWithStudents(id):
             resultList.append(students[key])
     return jsonify(resultList)
 
-@app.route('/courses/<int:id>/classes', methods=['GET'])
-def getCoursesWithClasses(id):
+@app.route('/courses/<int:id>/lessons', methods=['GET'])
+def getCoursesWithlessons(id):
     resultList = []
-    for item in courses[id]["ClassesID"]:
-        resultList.append(classes[item])
+    for item in courses[id]["lessonsID"]:
+        resultList.append(lessons[item])
     return jsonify(resultList)
+
+@app.route('/courses/<int:id>', methods=['DELETE'])
+def deleteCourseById(id):
+    course = courses.pop(id)
+    return jsonify(course)
+
+@app.route('/courses', methods=['POST'])
+def createCourse():
+    newID = max(courses) + 1
+    course = request.get_json()
+    courses[newID] = course
+    return jsonify(newID)
     
-################## Classes ##################
+@app.route('/courses/<int:id>', methods=['PUT'])
+def updateCourse(id):
+    course = request.get_json()
+    courses[id] = course
+    return jsonify(courses[id])
 
-@app.route('/classes')
-def showClasses():
-    return jsonify(classes)
+################## lessons ##################
 
-@app.route('/classes/<int:id>', methods=['GET'])
-def getClasses(id):
-    return jsonify(classes[id])
+@app.route('/lessons')
+def showlessons():
+    return jsonify(lessons)
 
-@app.route('/classes/<int:id>/students', methods=['GET'])
-def getClassesWithStudents(id):
+@app.route('/lessons/<int:id>', methods=['GET'])
+def getlessons(id):
+    return jsonify(lessons[id])
+
+@app.route('/lessons/<int:id>/students', methods=['GET'])
+def getlessonsWithStudents(id):
     resultlist = []
     for courseID in courses:
-        if id in courses[courseID]["ClassesID"]:
+        if id in courses[courseID]["lessonsID"]:
             for studentID in students:
                 if(students[studentID]["CourseID"] == courseID):
                     resultlist.append(students[studentID])
     return jsonify(resultlist)
 
-
-
-@app.route('/classes/<int:id>/courses', methods=['GET'])
-def getClassesWithCourses(id):
+@app.route('/lessons/<int:id>/courses', methods=['GET'])
+def getlessonsWithCourses(id):
     resultlist = []
     for courseID in courses:
-        if id in courses[courseID]["ClassesID"]:
+        if id in courses[courseID]["lessonsID"]:
             resultlist.append(courses[courseID])
     return jsonify(resultlist)
+
+@app.route('/lessons/<int:id>', methods=['DELETE'])
+def deleteLessonById(id):
+    lesson = lessons.pop(id)
+    return jsonify(lesson)
+
+@app.route('/lessons', methods=['POST'])
+def createlessons():
+    newID = max(lessons) + 1
+    lesson = request.get_json()
+    lessons[newID] = lesson
+    return jsonify(newID)
+    
+@app.route('/lessons/<int:id>', methods=['PUT'])
+def updatelessons(id):
+    lesson = request.get_json()
+    lessons[id] = lesson
+    return jsonify(lessons[id])
 
 ################## students ##################
 
@@ -165,11 +207,29 @@ def getStudentsWithResults(id):
     resultList = []
     results = students[id]["Result"]
     for resultID in results:
-        nameClasses = classes[resultID]["Name"]
-        maxResult = classes[resultID]["Max"]
+        namelessons = lessons[resultID]["Name"]
+        maxResult = lessons[resultID]["Max"]
         score = results[resultID]
-        resultList.append(f'Score for: {nameClasses} = {score}/{maxResult}')
+        resultList.append(f'Score for: {namelessons} = {score}/{maxResult}')
     return jsonify(resultList)
+
+@app.route('/students/<int:id>', methods=['DELETE'])
+def deleteStudentById(id):
+    student = students.pop(id)
+    return jsonify(student)
+
+@app.route('/students', methods=['POST'])
+def createStudents():
+    newID = max(students) + 1
+    student = request.get_json()
+    students[newID] = student
+    return jsonify(newID)
+    
+@app.route('/students/<int:id>', methods=['PUT'])
+def updateStudent(id):
+    student = request.get_json()
+    students[id] = student
+    return jsonify(student[id])
 
 ################## Run The App ##################
 
