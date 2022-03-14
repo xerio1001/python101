@@ -101,7 +101,7 @@ def homeScreen():
 def showCourses():
     tempList = []
     limit = request.args.get('limit')
-    if limit != None:
+    if limit != None and len(limit) > 0:
         limit = int(limit)
         for i in range(limit):
             tempList.append(courses[i])
