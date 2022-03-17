@@ -1,30 +1,100 @@
-import mysql.connector
 from dotenv import dotenv_values
 from mysql.connector import Error
 
 config = dotenv_values(".env")
 
-try:
-    conn = mysql.connector.connect(**config)
-    if conn.is_connected():
-        cursor = conn.cursor()
-        klantnr = input("Geef een klantnr in: ")
+class ClassicModels:
+    def __init__(self):
+        self.openClassicModels()
+
+    def openClassicModels(self):
+        import mysql.connector
+        try:
+            self.conn = mysql.connector.connect(**config)
+            if self.conn.is_connected():
+                self.cursor = self.conn.cursor()
+        except Error as e:
+            print("Error while connecting to MySQL", e)
+
+    def closeClassicModels(self):
+        try:
+            if self.conn.is_connected():
+                self.cursor.close()
+                self.conn.close()
+        except Error as e:
+            print("Error connection with MySQL", e)
+
+
+class Klant(ClassicModels):
+    def __init__(self, klant_nr = 0):
+        super().__init__()
+        self.nr = klant_nr
+        self.naam = ''
+        self.anaam = ''
+        self.vnaam = ''
+        self.tel = ''
+        self.adres1 = ''
+        self.adres2 = ''
+        self.gemeente = ''
+        self.staat = ''
+        self.postcode = ''
+        self.land = ''
+        self.verkopernr = ''
+        self.creditLimiet = ''
+        if self.nr > 0:
+            self.getKlant(self.nr)
+        super().closeClassicModels()
+
+    def __repr__(self):
+        return f'(<Klant> ' \
+               f'\n\tklantnr: {self.nr}, ' \
+               f'\n\tklantfirmanaam: {self.naam}, ' \
+               f'\n\tklantachternaam: {self.anaam},' \
+               f'\n\tklantvoornaam: {self.vnaam},' \
+               f'\n\tklanttel: {self.tel}, ' \
+               f'\n\tklantadres1: {self.adres1}, ' \
+               f'\n\tklantadres2: {self.adres2}, ' \
+               f'\n\tklantgemeente: {self.gemeente}, ' \
+               f'\n\tklantstaat: {self.staat}, ' \
+               f'\n\tklantpostcode: {self.postcode}, ' \
+               f'\n\tklantland: {self.land}, ' \
+               f'\n\tklantverkopernr: {self.verkopernr}, ' \
+               f'\n\tklantcreditlimiet: {self.creditLimiet})'
+
+    def getKlant(self,klantnr):
+        super().openClassicModels()
         strSQL = "select * from customers where customerNumber = %(klantnr)s"
-        cursor.execute(strSQL,{'klantnr':klantnr})
-        records = cursor.fetchall()
-        for record in records:
-            print(record)
-        """print("De connectie met de MySQL Server is gelukt.")
-        serverInfo = conn.get_server_info()
-        print("Connectie met MySQL Server versie", serverInfo)
-        cursor = conn.cursor()
-        cursor.execute("select database();")
-        record = cursor.fetchone()
-        print("Verbinding met de database:", record)"""
-except Error as e:
-    print("Error while connecting to MySQL", e)
-finally:
-    if conn.is_connected():
-        cursor.close()
-        conn.close()
-        print("Het MySQL connectie object is gesloten")
+        self.cursor.execute(strSQL,{'klantnr':klantnr})
+        self.record = self.cursor.fetchone()
+        if self.cursor.rowcount > 0:
+            self.matchKlantrecord(self.record)
+        super().closeClassicModels()
+
+    def matchKlantrecord(self,record):
+        # print(record)
+        self.nr = record[0]
+        self.naam = record[1]
+        self.anaam = record[2]
+        self.vnaam = record[3]
+        self.tel = record[4]
+        self.adres1 = record[5]
+        self.adres2 = record[6]
+        self.gemeente = record[7]
+        self.staat = record[8]
+        self.postcode = record[9]
+        self.land = record[10]
+        self.verkopernr = record[11]
+        self.creditLimiet = record[12]
+
+
+if __name__ == "__main__":
+    klant1 = Klant()
+    klant1.getKlant(121)
+    print(klant1)
+    print('\tklantfirmanaam:',klant1.naam)
+
+    klant2 = Klant(276)
+    print(klant2)
+
+    klant3 = Klant(455000)
+    print(klant3)
