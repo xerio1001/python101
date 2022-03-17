@@ -1,5 +1,3 @@
-from tkinter import INSERT
-from turtle import update
 from dotenv import dotenv_values
 from mysql.connector import Error, connect
 
