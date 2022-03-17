@@ -1,5 +1,7 @@
+from tkinter import INSERT
+from turtle import update
 from dotenv import dotenv_values
-from mysql.connector import Error
+from mysql.connector import Error, connect
 
 config = dotenv_values(".env")
 
@@ -8,9 +10,8 @@ class ClassicModels:
         self.openClassicModels()
 
     def openClassicModels(self):
-        import mysql.connector
         try:
-            self.conn = mysql.connector.connect(**config)
+            self.conn = connect(**config)
             if self.conn.is_connected():
                 self.cursor = self.conn.cursor()
         except Error as e:
@@ -85,6 +86,12 @@ class Klant(ClassicModels):
         self.land = record[10]
         self.verkopernr = record[11]
         self.creditLimiet = record[12]
+
+    def setKlant(self):
+        if(self.klant_nr in self.cursor):
+            UPDATE
+        else:
+            INSERT
 
 
 if __name__ == "__main__":
