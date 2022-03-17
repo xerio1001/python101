@@ -89,9 +89,11 @@ class Klant(ClassicModels):
 
     def setKlant(self):
         if(self.klant_nr in self.cursor):
-            UPDATE
+            pass
+            #UPDATE
         else:
-            INSERT
+            pass
+            #INSERT
 
 
 if __name__ == "__main__":
