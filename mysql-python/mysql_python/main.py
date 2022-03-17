@@ -7,13 +7,20 @@ config = dotenv_values(".env")
 try:
     conn = mysql.connector.connect(**config)
     if conn.is_connected():
-        print("De connectie met de MySQL Server is gelukt.")
+        cursor = conn.cursor()
+        klantnr = input("Geef een klantnr in: ")
+        strSQL = "select * from customers where customerNumber = %(klantnr)s"
+        cursor.execute(strSQL,{'klantnr':klantnr})
+        records = cursor.fetchall()
+        for record in records:
+            print(record)
+        """print("De connectie met de MySQL Server is gelukt.")
         serverInfo = conn.get_server_info()
         print("Connectie met MySQL Server versie", serverInfo)
         cursor = conn.cursor()
         cursor.execute("select database();")
         record = cursor.fetchone()
-        print("Verbinding met de database:", record)
+        print("Verbinding met de database:", record)"""
 except Error as e:
     print("Error while connecting to MySQL", e)
 finally:
