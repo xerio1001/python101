@@ -1,9 +1,10 @@
 from ..db import db
 from flask_bcrypt import generate_password_hash, check_password_hash
-from movie import Movie
+from movie_bag.database.models.movie import Movie
 
 class User(db.Document):
     email = db.EmailField(required=True, unique=True)
+    username = db.StringField(required=True, unique=True)
     password = db.StringField(required=True, min_length=6) 
     movies = db.ListField(db.ReferenceField('Movie', reverse_delete_rule=db.PULL))
 
