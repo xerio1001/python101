@@ -5,6 +5,7 @@ from database.db import initiliaze_db
 from flask_restful import Api
 from resources.routes import initialize_routes
 from resources.errors import errors
+from main import simple_page
 
 # import os
 # from dotenv import load_dotenv
@@ -22,6 +23,8 @@ app.config['MONGODB_SETTINGS'] = {
 
 initiliaze_db(app)
 initialize_routes(api)
+
+app.register_blueprint(simple_page, url_prefix="/ui") 
 
 if __name__ == "__main__":
     app.run(debug=True)

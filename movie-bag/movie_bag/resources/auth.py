@@ -39,4 +39,39 @@ class LoginApi(Resource):
             raise UnauthorizedError
         except Exception:
             raise InternalServerError
-    
+
+class LoginUi(Resource):
+
+    def post(self):
+        try:
+            email = request.form['email']
+            password = request.form['password']
+            user = User.objects.get(email=email)
+            authorized = user.check_password(password)
+            if not authorized:
+                return {'error': 'Email or password invalid'}, 401
+            
+            expires = datetime.timedelta(days=1)
+            access_token = create_access_token(identity=str(user.id), expires_delta=expires)
+            return {'token': access_token}, 200
+        except (UnauthorizedError, DoesNotExist):
+            raise UnauthorizedError
+        except Exception:
+            raise InternalServerError
+
+class SignupUi(Resource):
+    def post(self):
+        try:
+            email = request.form['email']
+            user = request.form['username']
+            password = request.form['password']
+            password.hash_password()
+            user.save(email, user, password)
+            id = user.id
+            return {'id': str(id)}, 200
+        except FieldDoesNotExist:
+            raise SchemaValidationError
+        except NotUniqueError:
+            raise EmailAlreadyExistsError
+        except Exception:
+            raise InternalServerError
