@@ -41,7 +41,6 @@ class LoginApi(Resource):
             raise InternalServerError
 
 class LoginUi(Resource):
-
     def post(self):
         try:
             email = request.form['email']
@@ -59,6 +58,7 @@ class LoginUi(Resource):
         except Exception:
             raise InternalServerError
 
+
 class SignupUi(Resource):
     def post(self):
         try:
@@ -66,9 +66,22 @@ class SignupUi(Resource):
             user = request.form['username']
             password = request.form['password']
             password.hash_password()
-            user.save(email, user, password)
+            createUser = {
+                "email": email, 
+                "username": user, 
+                "password": password
+            }
+            createUser.save()
+            id = createUser.id
+            return {'id': str(id)}, 200
+            """
+            body = request.get_json()
+            user = User(**body)
+            user.hash_password()
+            user.save()
             id = user.id
             return {'id': str(id)}, 200
+            """
         except FieldDoesNotExist:
             raise SchemaValidationError
         except NotUniqueError:
