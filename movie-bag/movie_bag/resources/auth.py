@@ -62,26 +62,13 @@ class LoginUi(Resource):
 class SignupUi(Resource):
     def post(self):
         try:
-            email = request.form['email']
-            user = request.form['username']
-            password = request.form['password']
-            password.hash_password()
-            createUser = {
-                "email": email, 
-                "username": user, 
-                "password": password
-            }
-            createUser.save()
-            id = createUser.id
-            return {'id': str(id)}, 200
-            """
-            body = request.get_json()
+            body = request.form
             user = User(**body)
             user.hash_password()
             user.save()
             id = user.id
             return {'id': str(id)}, 200
-            """
+
         except FieldDoesNotExist:
             raise SchemaValidationError
         except NotUniqueError:

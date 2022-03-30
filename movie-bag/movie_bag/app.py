@@ -7,10 +7,6 @@ from resources.routes import initialize_routes
 from resources.errors import errors
 from main import simple_page
 
-# import os
-# from dotenv import load_dotenv
-# load_dotenv()
-
 app = Flask(__name__)
 app.config['JWT_SECRET_KEY'] = "t1NP63m4wnBg6nyHYKfmc2TpCOGI4nss"
 api = Api(app, errors=errors)
