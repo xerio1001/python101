@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "project"
+name = "movie-bag"
 version = "0.1.0"
 description = ""
 authors = ["xerio1001 <dariovanhasselt@hotmail.be>"]
