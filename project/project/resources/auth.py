@@ -40,7 +40,7 @@ class LoginApi(Resource):
         except Exception:
             raise InternalServerError
 
-class LoginUi(Resource):
+"""class LoginUi(Resource):
     def post(self):
         try:
             email = request.form['email']
@@ -74,4 +74,4 @@ class SignupUi(Resource):
         except NotUniqueError:
             raise EmailAlreadyExistsError
         except Exception:
-            raise InternalServerError
+            raise InternalServerError"""

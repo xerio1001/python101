@@ -1,15 +1,15 @@
 from flask import request, Response
 from flask_restful import Resource
-from database.models.user import Movie, User
+from database.models.user import Stock, User
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from mongoengine.errors import FieldDoesNotExist, \
 NotUniqueError, DoesNotExist, ValidationError, InvalidQueryError
 from resources.errors import *
 
-class MoviesApi(Resource):
+class StockApi(Resource):
     def get(self):
-      movies = Movie.objects().to_json()
-      return Response(movies, mimetype="application/json", status=200)
+      stocks = Stock.objects().to_json()
+      return Response(stocks, mimetype="application/json", status=200)
 
     @jwt_required()
     def post(self):
@@ -17,32 +17,32 @@ class MoviesApi(Resource):
         user_id = get_jwt_identity()
         body = request.get_json()
         user = User.objects.get(id=user_id)
-        movie = Movie(**body, added_by=user)
-        movie.save()
-        user.update(push__movies=movie)
+        stock = Stock(**body, added_by=user)
+        stock.save()
+        user.update(push__stocks=stock)
         user.save()
-        id = movie.id
+        id = stock.id
         return {'id': str(id)}, 200
       except (FieldDoesNotExist, ValidationError):
         raise SchemaValidationError
       except NotUniqueError:
-        raise MovieAlreadyExistsError
+        raise StockAlreadyExistsError
       except Exception:
         raise InternalServerError
   
-class MovieApi(Resource):
+class StockByIdApi(Resource):
     @jwt_required()
     def put(self, id):
       try:
         user_id = get_jwt_identity()
-        movie = Movie.objects.get(id=id, added_by=user_id)
+        stock = Stock.objects.get(id=id, added_by=user_id)
         body = request.get_json()
-        movie.update(**body)
+        stock.update(**body)
         return '', 200
       except InvalidQueryError:
         raise SchemaValidationError
       except DoesNotExist:
-        raise UpdatingMovieError
+        raise UpdatingStockError
       except Exception:
         raise InternalServerError
   
@@ -50,19 +50,19 @@ class MovieApi(Resource):
     def delete(self, id):
       try:
         user_id = get_jwt_identity()
-        movie = Movie.objects.get(id=id, added_by=user_id)
-        movie.delete()
+        stock = Stock.objects.get(id=id, added_by=user_id)
+        stock.delete()
         return '', 200
       except DoesNotExist:
-        raise DeletingMovieError
+        raise DeletingStockError
       except Exception:
         raise InternalServerError
     
     def get(self, id):
       try:
-        movies = Movie.objects.get(id=id).to_json()
-        return Response(movies, mimetype="application/json", status=200)
+        stocks = Stock.objects.get(id=id).to_json()
+        return Response(stocks, mimetype="application/json", status=200)
       except DoesNotExist:
-        raise MovieNotExistsError
+        raise StockNotExistsError
       except Exception:
         raise InternalServerError

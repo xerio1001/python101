@@ -8,19 +8,19 @@ class SchemaValidationError(HTTPException):
     pass
 
 
-class MovieAlreadyExistsError(HTTPException):
+class StockAlreadyExistsError(HTTPException):
     pass
 
 
-class UpdatingMovieError(HTTPException):
+class UpdatingStockError(HTTPException):
     pass
 
 
-class DeletingMovieError(HTTPException):
+class DeletingStockError(HTTPException):
     pass
 
 
-class MovieNotExistsError(HTTPException):
+class StockNotExistsError(HTTPException):
     pass
 
 
@@ -41,20 +41,20 @@ errors = {
          "message": "Request is missing required fields",
          "status": 400
      },
-     "MovieAlreadyExistsError": {
-         "message": "Movie with given name already exists",
+     "StockAlreadyExistsError": {
+         "message": "Stock with given name already exists",
          "status": 400
      },
-     "UpdatingMovieError": {
-         "message": "Updating movie added by other is forbidden",
+     "UpdatingStockError": {
+         "message": "Updating stock added by other is forbidden",
          "status": 403
      },
-     "DeletingMovieError": {
-         "message": "Deleting movie added by other is forbidden",
+     "DeletingStockError": {
+         "message": "Deleting stock added by other is forbidden",
          "status": 403
      },
-     "MovieNotExistsError": {
-         "message": "Movie with given id doesn't exists",
+     "StockNotExistsError": {
+         "message": "Stock with given id doesn't exists",
          "status": 400
      },
      "EmailAlreadyExistsError": {
