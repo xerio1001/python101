@@ -1,6 +1,6 @@
 from ..db import db
 from flask_bcrypt import generate_password_hash, check_password_hash
-from movie_bag.database.models.movie import Movie
+from project.database.models.stock import Movie
 
 class User(db.Document):
     email = db.EmailField(required=True, unique=True)

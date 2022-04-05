@@ -1,4 +1,4 @@
-from .movie import MoviesApi, MovieApi
+from .stock import MoviesApi, MovieApi
 from .auth import SignupApi, LoginApi, LoginUi, SignupUi
 from .user import UserApi, UsersApi
 
