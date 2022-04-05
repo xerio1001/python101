@@ -9,8 +9,8 @@ class UsersApi(Resource):
 
   def post(self):
     body = request.get_json()
-    movie = User(**body).save()
-    id = movie.id
+    stock = User(**body).save()
+    id = stock.id
     return {'id': str(id)}, 200
  
 class UserApi(Resource):
@@ -20,7 +20,7 @@ class UserApi(Resource):
     return '', 200
  
   def delete(self, id):
-    movie = User.objects.get(id=id).delete()
+    stock = User.objects.get(id=id).delete()
     return '', 200
 
   def get(self, id):
