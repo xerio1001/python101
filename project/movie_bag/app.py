@@ -14,7 +14,7 @@ bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
 app.config['MONGODB_SETTINGS'] = {
-    'host': 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox.o2oak.mongodb.net/Project?retryWrites=true&w=majority'
+    'host': 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox.o2oak.mongodb.net/Movie-bag?retryWrites=true&w=majority'
 }
 
 initiliaze_db(app)
