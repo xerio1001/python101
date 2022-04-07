@@ -8,19 +8,19 @@ class SchemaValidationError(HTTPException):
     pass
 
 
-class StockAlreadyExistsError(HTTPException):
+class AlreadyExistsError(HTTPException):
     pass
 
 
-class UpdatingStockError(HTTPException):
+class UpdatingError(HTTPException):
     pass
 
 
-class DeletingStockError(HTTPException):
+class DeletingError(HTTPException):
     pass
 
 
-class StockNotExistsError(HTTPException):
+class NotExistsError(HTTPException):
     pass
 
 
@@ -41,20 +41,20 @@ errors = {
          "message": "Request is missing required fields",
          "status": 400
      },
-     "StockAlreadyExistsError": {
-         "message": "Stock with given name already exists",
+     "AlreadyExistsError": {
+         "message": "Given name already exists",
          "status": 400
      },
-     "UpdatingStockError": {
-         "message": "Updating stock added by other is forbidden",
+     "UpdatingError": {
+         "message": "Updating by other user is forbidden",
          "status": 403
      },
-     "DeletingStockError": {
-         "message": "Deleting stock added by other is forbidden",
+     "DeletingError": {
+         "message": "Deleting by other user is forbidden",
          "status": 403
      },
-     "StockNotExistsError": {
-         "message": "Stock with given id doesn't exists",
+     "NotExistsError": {
+         "message": "Given id doesn't exists",
          "status": 400
      },
      "EmailAlreadyExistsError": {

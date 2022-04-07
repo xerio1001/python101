@@ -1,24 +1,24 @@
 from flask import request, Response
 from flask_restful import Resource
-from database.models.user import Stock
+from database.models.suppliers import Supplier
 from flask_jwt_extended import jwt_required
 from mongoengine.errors import FieldDoesNotExist, \
 NotUniqueError, DoesNotExist, ValidationError, InvalidQueryError
 from resources.errors import *
 
-class StockApi(Resource):
+class supplierApi(Resource):
   @jwt_required()
   def get(self):
-    stocks = Stock.objects().to_json()
-    return Response(stocks, mimetype="application/json", status=200)
+    suppliers = Supplier.objects().to_json()
+    return Response(suppliers, mimetype="application/json", status=200)
 
   @jwt_required()
   def post(self):
     try:
       body = request.get_json()
-      stock = Stock(**body)
-      stock.save()
-      id = stock.id
+      supplier = Supplier(**body)
+      supplier.save()
+      id = supplier.id
       return {'id': str(id)}, 200
     except (FieldDoesNotExist, ValidationError):
       raise SchemaValidationError
@@ -27,13 +27,13 @@ class StockApi(Resource):
     except Exception:
       raise InternalServerError
   
-class StockByIdApi(Resource):
+class supplierByIdApi(Resource):
     @jwt_required()
     def put(self, id):
       try:
-        stock = Stock.objects.get(id=id)
+        supplier = Supplier.objects.get(id=id)
         body = request.get_json()
-        stock.update(**body)
+        supplier.update(**body)
         return '', 200
       except InvalidQueryError:
         raise SchemaValidationError
@@ -45,8 +45,8 @@ class StockByIdApi(Resource):
     @jwt_required()
     def delete(self, id):
       try:
-        stock = Stock.objects.get(id=id)
-        stock.delete()
+        supplier = Supplier.objects.get(id=id)
+        supplier.delete()
         return '', 200
       except DoesNotExist:
         raise DeletingError
@@ -56,8 +56,8 @@ class StockByIdApi(Resource):
     @jwt_required()
     def get(self, id):
       try:
-        stocks = Stock.objects.get(id=id).to_json()
-        return Response(stocks, mimetype="application/json", status=200)
+        suppliers = Supplier.objects.get(id=id).to_json()
+        return Response(suppliers, mimetype="application/json", status=200)
       except DoesNotExist:
         raise NotExistsError
       except Exception:
