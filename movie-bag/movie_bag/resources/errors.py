@@ -28,7 +28,19 @@ class EmailAlreadyExistsError(HTTPException):
     pass
 
 
+class BadTokenError(Exception):
+    pass
+
+
+class ExpiredTokenError(Exception):
+    pass
+
+
 class UnauthorizedError(HTTPException):
+    pass
+
+
+class EmailDoesnotExistsError(Exception):
     pass
 
 
@@ -64,5 +76,21 @@ errors = {
      "UnauthorizedError": {
          "message": "Invalid username or password",
          "status": 401
-     }
+     },
+     "EmailDoesnotExistsError": {
+         "message": "Couldn't find the user with given email address",
+         "status": 400
+     },
+     "BadTokenError": {
+         "message": "Invalid token",
+         "status": 403
+      },
+     "ExpiredTokenError": {
+         "message": "Expired token",
+         "status": 401
+      },
+      "UnauthorizedError": {
+         "message": "UnauthorizedError",
+         "status": 403
+      }
 }
