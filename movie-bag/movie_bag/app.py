@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
+mUsername = os.environ['MAIL_USERNAME']
 dbUser = os.environ['DB_NAME']
 dbPassword = os.environ['DB_PASSWORD']
 dbUri = os.environ['DB_URI']
@@ -24,6 +25,8 @@ app.config['MAIL_SERVER'] = os.environ['MAIL_SERVER']
 app.config['MAIL_PORT'] = os.environ['MAIL_PORT']
 app.config['MAIL_USERNAME'] = os.environ['MAIL_USERNAME']
 app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
+
+
 
 mail = Mail(app)
 # imports requiring app and mail
